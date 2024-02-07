@@ -4,10 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Foxes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-red">
+<body>
+  <header class="header">
+    <div class="title">Our fox<span class="highlight-orange">es</span></div>
+  </header>
+
+  <nav class="navbar">
+    <input type="radio" name="fox-kind" class="hidden" id="fennec-fox" value="Fennec">
+    <input type="radio" name="fox-kind" class="hidden" id="arctic-fox" value="Arctic">
+    <input type="radio" name="fox-kind" class="hidden" id="kit-fox" value="Kit">
+    <input type="radio" name="fox-kind" class="hidden" id="red-fox" value="Red">
+    <input type="radio" name="fox-kind" class="hidden" id="pet-fox" value="Pet">
+
+    <label class="fox-select" for="fennec-fox">Fennec Fox</label>
+    <label class="fox-select" for="arctic-fox">Artic Fox</label>
+    <label class="fox-select" for="kit-fox">Kit Fox</label>
+    <label class="fox-select" for="red-fox">Red Fox</label>
+    <label class="fox-select" for="pet-fox">Pet Fox</label>
+  </nav>
+
+  <div class="container">
+    <div class="fox-list"></div>
+  </div>
 
   <script src="./dist/index.js"></script>
 </body>

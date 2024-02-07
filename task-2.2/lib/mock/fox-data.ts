@@ -1,0 +1,68 @@
+import { FoxCardDef, FoxType } from '../entities/models';
+
+export const FoxData: FoxCardDef[] = [
+	{
+		foxType: FoxType.Red,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Red smile fox',
+	},
+	{
+		foxType: FoxType.Pet,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Pet smile fox',
+	},
+	{
+		foxType: FoxType.Arctic,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Arctic  smile fox',
+	},
+	{
+		foxType: FoxType.Kit,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Kit smile fox',
+	},
+	{
+		foxType: FoxType.Pet,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Pet smile fox',
+	},
+	{
+		foxType: FoxType.Kit,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Kit smile fox',
+	},
+	{
+		foxType: FoxType.Fennec,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Fennec  smile fox',
+	},
+	{
+		foxType: FoxType.Red,
+		imgSrc: './icons/Mask group-1.png',
+		likes: 10,
+		readMoreLink: '',
+		text: 'Lorem ipsum dolor sit amet, eu mei posse possim atomorum, vix cu fabellas assueverit. Vel ad option partiendo maiestatis, nec affert appetere.',
+		title: 'Red smile fox',
+	},
+];

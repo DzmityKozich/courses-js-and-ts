@@ -1,3 +1,128 @@
-.bg-red {
-  background-color: red;
+$orange: #ff3d00;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 24px;
+	color: #000;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	height: 100%;
+	line-height: 1rem;
+	text-rendering: optimizeSpeed;
+	background-color: #f8f8f8;
+	font-family: Roboto;
+	letter-spacing: 0.02em;
+}
+
+ul {
+	list-style-position: inside;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+button {
+	cursor: pointer;
+}
+
+// Common
+.btn-like {
+	background-color: transparent;
+	border: 0;
+	border-radius: 2px;
+	padding: 5px;
+	padding-left: 18px;
+	background-image: url(../icons/heart.svg);
+	background-repeat: no-repeat;
+	background-position: 0 4px;
+	background-size: 16px 16px;
+	color: $orange;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: #e3e3e3;
+	}
+}
+
+.highlight-orange {
+	color: #fff;
+	background-color: $orange;
+	height: min-content;
+	display: inline-block;
+}
+
+.hidden {
+	display: none;
+}
+
+// Header
+.header {
+	padding: 1rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	border-bottom: 1px #e3e3e3 solid;
+	padding-bottom: 3px;
+}
+
+// Nav
+.navbar {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(5, max-content);
+	grid-template-rows: 100%;
+	column-gap: 0.5rem;
+	justify-content: center;
+	padding: 2.5rem 0;
+}
+
+.fox-select {
+	padding: 0.25rem 0.75rem;
+	border: 1px $orange solid;
+	cursor: pointer;
+	border-radius: 5px;
+	color: $orange;
+	user-select: none;
+}
+
+#fennec-fox:checked ~ label[for='fennec-fox'],
+#arctic-fox:checked ~ label[for='arctic-fox'],
+#kit-fox:checked ~ label[for='kit-fox'],
+#red-fox:checked ~ label[for='red-fox'],
+#pet-fox:checked ~ label[for='pet-fox'] {
+	color: #fff;
+	background-color: $orange;
+}
+
+.container {
+	padding: 1rem 5rem;
+}
+
+// Fox list
+.fox-list {
+	display: flex;
+	flex-direction: row;
+}
+
+// Fox Card
