@@ -1,36 +1,39 @@
+import { FoxCardDef } from './entities/models';
+
 type FoxCardComponents = {
 	foxCard: HTMLDivElement;
 	cardImg: HTMLDivElement;
 	cardTitle: HTMLDivElement;
 	cardContent: HTMLDivElement;
-	cardActions: HTMLDivElement;
+	cardActions: HTMLAnchorElement;
 	img: HTMLImageElement;
 	likeBtn: HTMLButtonElement;
 };
 
-type FoxCardElements = { card: HTMLDivElement } & FoxCardComponents;
+export type FoxCardElements = { card: HTMLDivElement } & FoxCardComponents;
 
-export const createFoxCard = (): FoxCardElements => {
+export const createFoxCard = (foxCardDef: FoxCardDef): FoxCardElements => {
 	const { foxCard, img, cardImg, cardActions, cardContent, cardTitle, likeBtn } = createElements();
 	const card = design(
 		foxCard,
 		['fox-card'],
 		[
 			design(cardImg, ['card-img'], [design(img, [])]),
-			design(cardTitle, ['card-title'], [design(likeBtn, ['like-btn'])]),
-			design(cardContent, ['card-content']),
-			design(cardActions, ['card-actions']),
+			design(cardTitle, ['card-title'], [design(likeBtn, ['btn-like'])], foxCardDef.title),
+			design(cardContent, ['card-content'], [], foxCardDef.text),
+			design(cardActions, ['card-actions'], [], 'Learn More >>'),
 		]
 	);
 	return { card, foxCard, img, cardContent, cardTitle, likeBtn, cardActions, cardImg };
 };
 
-const design = <T extends HTMLElement>(parant: T, cssClasses: string[], children: HTMLElement[] = []): T => {
-	parant.classList.add(...cssClasses);
+const design = <T extends HTMLElement>(parent: T, cssClasses: string[], children: HTMLElement[] = [], textContent: string = ''): T => {
+	parent.classList.add(...cssClasses);
+	parent.textContent = textContent;
 	children.forEach((child) => {
-		parant.appendChild(child);
+		parent.appendChild(child);
 	});
-	return parant;
+	return parent;
 };
 
 const createElements = (): FoxCardComponents => {
@@ -40,6 +43,6 @@ const createElements = (): FoxCardComponents => {
 	const cardTitle: HTMLDivElement = document.createElement('div');
 	const likeBtn: HTMLButtonElement = document.createElement('button');
 	const cardContent: HTMLDivElement = document.createElement('div');
-	const cardActions: HTMLDivElement = document.createElement('div');
+	const cardActions: HTMLAnchorElement = document.createElement('a');
 	return { foxCard, cardActions, cardContent, cardImg, cardTitle, img, likeBtn };
 };

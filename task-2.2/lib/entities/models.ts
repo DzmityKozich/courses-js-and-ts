@@ -12,5 +12,5 @@ export interface FoxCardDef {
 	text: string;
 	imgSrc: string;
 	likes: number;
-	readMoreLink: string;
+	learnMoreLink: string;
 }

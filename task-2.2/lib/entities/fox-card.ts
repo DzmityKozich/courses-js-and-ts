@@ -1,18 +1,26 @@
-import { createFoxCard } from '../fox-card-factory';
-import { FoxType } from './models';
+import { createFoxCard, FoxCardElements } from '../fox-card-factory';
+import { FoxCardDef, FoxType } from './models';
 
 export class FoxCard {
+	public foxType: FoxType;
+
 	private element: HTMLElement;
 	private likeBtn: HTMLButtonElement;
 
-	constructor(public foxType: FoxType, title: string, text: string, imgSrc: string, private likes: number, readMoreLink: string = '') {
-		const { card, cardContent, cardTitle, img, likeBtn } = createFoxCard();
-		this.element = card;
-		this.likeBtn = likeBtn;
-		cardContent.textContent = text;
-		cardTitle.textContent = title;
-		img.src = imgSrc;
+	constructor(foxCardDef: FoxCardDef) {
+		this.foxType = foxCardDef.foxType;
+		const cardComponents = createFoxCard(foxCardDef);
+		this.element = cardComponents.card;
+		this.likeBtn = cardComponents.likeBtn;
+		this.setupView(foxCardDef, cardComponents);
+	}
+
+	private setupView(foxCardDef: FoxCardDef, cardComponents: FoxCardElements): void {
+		const { img, cardActions } = cardComponents;
+		img.src = foxCardDef.imgSrc;
+		this.likeBtn.textContent = `${foxCardDef.likes}`;
 		this.likeBtn.addEventListener('click', this.onLikeClick);
+		cardActions.href = foxCardDef.learnMoreLink;
 	}
 
 	public addTo(parent: Node): void {
@@ -33,6 +41,7 @@ export class FoxCard {
 	}
 
 	private onLikeClick = () => {
-		this.likeBtn.textContent = `${++this.likes}`;
+		let likes: number = this.likeBtn.textContent ? +this.likeBtn.textContent : 0;
+		this.likeBtn.textContent = `${++likes}`;
 	};
 }

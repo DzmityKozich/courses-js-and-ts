@@ -1,4 +1,29 @@
 $orange: #ff3d00;
+$lightgray: #e3e3e3;
+
+@mixin max1100 {
+	@media (max-width: 1100px) {
+		@content;
+	}
+}
+
+@mixin max900 {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin max700 {
+	@media (max-width: 700px) {
+		@content;
+	}
+}
+
+@mixin max500 {
+	@media (max-width: 500px) {
+		@content;
+	}
+}
 
 *,
 *::before,
@@ -64,7 +89,7 @@ button {
 .highlight-orange {
 	color: #fff;
 	background-color: $orange;
-	height: min-content;
+	height: max-content;
 	display: inline-block;
 }
 
@@ -82,19 +107,32 @@ button {
 }
 
 .title {
-	border-bottom: 1px #e3e3e3 solid;
-	padding-bottom: 3px;
+	border-bottom: 1px $lightgray solid;
+	padding-bottom: 10px;
+	line-height: 35px;
+	font-size: 1.75rem;
+	font-weight: 700;
 }
 
 // Nav
 .navbar {
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(5, max-content);
+	grid-template-columns: repeat(6, max-content);
 	grid-template-rows: 100%;
 	column-gap: 0.5rem;
 	justify-content: center;
 	padding: 2.5rem 0;
+
+	@include max700 {
+		padding: 0;
+	}
+
+	@include max900 {
+		grid-template-columns: repeat(2, max-content);
+		grid-template-rows: repeat(4, 1fr);
+		gap: 0.5rem;
+	}
 }
 
 .fox-select {
@@ -104,25 +142,94 @@ button {
 	border-radius: 5px;
 	color: $orange;
 	user-select: none;
+
+	@include max900 {
+		text-align: center;
+
+		&[for='all-foxes'] {
+			grid-column: 1 / span 2;
+		}
+
+		&[for='pet-fox'] {
+			grid-column: 1 / span 2;
+		}
+	}
 }
 
 #fennec-fox:checked ~ label[for='fennec-fox'],
 #arctic-fox:checked ~ label[for='arctic-fox'],
 #kit-fox:checked ~ label[for='kit-fox'],
 #red-fox:checked ~ label[for='red-fox'],
-#pet-fox:checked ~ label[for='pet-fox'] {
+#pet-fox:checked ~ label[for='pet-fox'],
+#all-foxes:checked ~ label[for='all-foxes'] {
 	color: #fff;
 	background-color: $orange;
 }
 
+// Container
 .container {
 	padding: 1rem 5rem;
+
+	@include max500 {
+		padding: 1rem;
+	}
 }
 
 // Fox list
 .fox-list {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 // Fox Card
+.fox-card {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: repeat(3, auto);
+	column-gap: 0.75rem;
+	max-width: 45%;
+	margin-top: 1.75rem;
+
+	@include max1100 {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, auto);
+	}
+
+	@include max700 {
+		max-width: 100%;
+	}
+}
+
+.card-img {
+	grid-row: 1 / span 3;
+	align-self: center;
+	justify-self: center;
+}
+
+.card-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.5rem;
+	border-bottom: 1px $lightgray solid;
+}
+
+.card-content {
+	font-size: 0.625rem;
+	font-weight: 300;
+	line-height: 1rem;
+}
+
+.card-actions {
+	color: $orange;
+	font-size: 0.5rem;
+	font-weight: 600;
+	align-self: end;
+	text-decoration: none;
+}
