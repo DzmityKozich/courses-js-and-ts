@@ -7,7 +7,6 @@ export class FoxList {
 
 	constructor(private listEl: Node, cards: FoxCard[]) {
 		this.fillCards(cards);
-		// this.showAllCards();
 	}
 
 	private fillCards(cardList: FoxCard[]): void {
@@ -25,9 +24,7 @@ export class FoxList {
 	}
 
 	public hideAllCards(): void {
-		[...this.cards.values()].forEach((cards) => {
-			cards.forEach((card) => card.remove());
-		});
+		this.listEl.textContent = '';
 	}
 
 	public showCardsFor(foxType: FoxType): void {

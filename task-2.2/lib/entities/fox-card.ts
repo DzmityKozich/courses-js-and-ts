@@ -1,4 +1,4 @@
-import { createFoxCard, FoxCardElements } from '../fox-card-factory';
+import { buildFoxCard } from '../fox-card-factory';
 import { FoxCardDef, FoxType } from './models';
 
 export class FoxCard {
@@ -9,18 +9,9 @@ export class FoxCard {
 
 	constructor(foxCardDef: FoxCardDef) {
 		this.foxType = foxCardDef.foxType;
-		const cardComponents = createFoxCard(foxCardDef);
-		this.element = cardComponents.card;
-		this.likeBtn = cardComponents.likeBtn;
-		this.setupView(foxCardDef, cardComponents);
-	}
-
-	private setupView(foxCardDef: FoxCardDef, cardComponents: FoxCardElements): void {
-		const { img, cardActions } = cardComponents;
-		img.src = foxCardDef.imgSrc;
-		this.likeBtn.textContent = `${foxCardDef.likes}`;
+		this.element = buildFoxCard(foxCardDef);
+		this.likeBtn = this.element.querySelector('.btn-like')!;
 		this.likeBtn.addEventListener('click', this.onLikeClick);
-		cardActions.href = foxCardDef.learnMoreLink;
 	}
 
 	public addTo(parent: Node): void {
