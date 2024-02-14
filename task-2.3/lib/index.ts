@@ -4,53 +4,51 @@ import { performance } from "perf_hooks";
 import { selectionSort } from "./sortings/selection-sort";
 import { insertionSort } from "./sortings/insertion-sort";
 import { quicksort } from "./sortings/quicksort";
+import { mergeSort } from "./sortings/merge-sort";
 
-interface SortResult {
-  name: string;
-  performance: number;
-  result: number[];
+class SortResults {
+  public performance: number[] = [];
+  public result: number[][] = [];
+
+  constructor(
+    public name: string,
+    public sort: (values: number[]) => number[]
+  ) {}
+
+  public getAvgPerformance(): number {
+    if (!this.performance.length) throw new Error("Have no performance data!");
+    const sum = this.performance.reduce((sum, time) => {
+      return sum + time;
+    }, 0);
+    return sum / this.performance.length;
+  }
 }
 
-interface Sorting {
-  name: string;
-  sort: (values: number[]) => number[];
-}
-
-const randomValues: number[] = randomNumbers();
-console.log("Input: ", randomValues);
-
-const sortings: Sorting[] = [
-  {
-    name: "Bubble sort",
-    sort: bubbleSort,
-  },
-  {
-    name: "Selection sort",
-    sort: selectionSort,
-  },
-  {
-    name: "Insertion sort",
-    sort: insertionSort,
-  },
-  {
-    name: "Quicksort sort",
-    sort: quicksort,
-  },
+const sortingResults: SortResults[] = [
+  new SortResults("Bubble sort", bubbleSort),
+  new SortResults("Selection sort", selectionSort),
+  new SortResults("Insertion sort", insertionSort),
+  new SortResults("Quicksort sort", quicksort),
+  new SortResults("Merge sort", mergeSort),
 ];
 
-function runSortings(sortings: Sorting[], values: number[]): SortResult[] {
-  const results: SortResult[] = [];
+function testSorting(sortings: SortResults[]): SortResults[] {
+  for (let i = 0; i < 10; i++) {
+    const values = randomNumbers();
 
-  sortings.forEach((sort) => {
-    const startTime = performance.now();
-    const result = sort.sort(values);
-    const endTime = performance.now();
-    results.push({ name: sort.name, performance: endTime - startTime, result });
-  });
-
-  return results;
+    sortings.forEach((sort) => {
+      const startTime = performance.now();
+      const result = sort.sort(values);
+      const endTime = performance.now();
+      sort.performance.push(endTime - startTime);
+      sort.result.push(result);
+    });
+  }
+  return sortings;
 }
 
-runSortings(sortings, randomValues).forEach(({ name, performance, result }) => {
-  console.log(`${name} performance is ${performance}ms; result is ${result}`);
+testSorting(sortingResults).forEach((sort) => {
+  console.log(
+    `${sort.name} average performance is ${sort.getAvgPerformance()}ms`
+  );
 });
