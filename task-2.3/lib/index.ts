@@ -6,6 +6,9 @@ import { insertionSort } from "./sortings/insertion-sort";
 import { quicksort } from "./sortings/quicksort";
 import { mergeSort } from "./sortings/merge-sort";
 
+const iterations: number = +process.argv[2] || 10;
+const amount: number = +process.argv[3] || 1000;
+
 class SortResults {
   public performance: number[] = [];
   public result: number[][] = [];
@@ -33,8 +36,8 @@ const sortingResults: SortResults[] = [
 ];
 
 function testSorting(sortings: SortResults[]): SortResults[] {
-  for (let i = 0; i < 10; i++) {
-    const values = randomNumbers();
+  for (let i = 0; i < iterations; i++) {
+    const values = randomNumbers(amount);
 
     sortings.forEach((sort) => {
       const startTime = performance.now();
