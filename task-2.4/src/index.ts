@@ -43,6 +43,4 @@ createBtn.addEventListener('click', () => {
 	validators.forEach((validator) => {
 		validator.validate();
 	});
-
-	console.log(fileUploadValidator.value);
 });

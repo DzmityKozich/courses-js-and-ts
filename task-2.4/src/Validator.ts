@@ -1,7 +1,11 @@
 export abstract class Validator<T extends HTMLElement> {
 	constructor(protected controlElement: T, protected isRequired: boolean) {}
 
-	public abstract get valid(): boolean;
+	public get valid(): boolean {
+		if (!this.isRequired && !this.hasValue()) return true;
+		if (this.isRequired && !this.hasValue()) return false;
+		return this.validation();
+	}
 
 	public abstract get value(): any;
 
@@ -12,9 +16,10 @@ export abstract class Validator<T extends HTMLElement> {
 		return isValid;
 	}
 
+	protected abstract validation(): boolean;
+
 	protected hasValue(): boolean {
-		if (!this.isRequired) return true;
-		return !!this.value;
+		return ![undefined, null, '', NaN].includes(this.value);
 	}
 }
 
@@ -29,17 +34,17 @@ export class StringValidator extends Validator<HTMLInputElement | HTMLTextAreaEl
 		super(controlElement, isRequired);
 	}
 
-	public get valid(): boolean {
-		return this.hasValue() && this.isMatchPattern() && this.isLessThanMaxLength() && this.isGreaterThanMinLength();
-	}
-
 	public get value(): string {
 		return this.controlElement.value;
 	}
 
+	protected validation(): boolean {
+		return this.isMatchPattern() && this.isLessThanMaxLength() && this.isGreaterThanMinLength();
+	}
+
 	private isMatchPattern(): boolean {
 		if (!this.params.pattern) return true;
-		return new RegExp(this.params.pattern).test(this.value);
+		return this.params.pattern.test(this.value);
 	}
 
 	private isGreaterThanMinLength(): boolean {
@@ -91,11 +96,19 @@ export class NumberValidator extends Validator<HTMLInputElement> {
 	}
 
 	public get valid(): boolean {
-		return this.hasValue() && !Number.isNaN(this.value) && this.isGreaterThanMin() && this.isLessThanMax();
+		if (!this.isRequired && !this.hasValue()) return true;
+		if (this.isRequired && !this.hasValue()) return false;
+		return this.validation();
 	}
 
 	public get value(): number {
+		const value: string = this.controlElement.value;
+		if (!value) return NaN;
 		return +this.controlElement.value;
+	}
+
+	protected validation(): boolean {
+		return !Number.isNaN(this.value) && this.isGreaterThanMin() && this.isLessThanMax();
 	}
 
 	private isLessThanMax(): boolean {
@@ -123,8 +136,8 @@ export class AploadValidator extends Validator<HTMLInputElement> {
 		return [...(this.controlElement.files || [])];
 	}
 
-	public get valid(): boolean {
-		return this.hasValue() && this.checkAmount() && this.checkFileTypes();
+	protected validation(): boolean {
+		return this.checkAmount() && this.checkFileTypes();
 	}
 
 	public checkAmount(): boolean {
