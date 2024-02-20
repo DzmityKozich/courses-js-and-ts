@@ -49,7 +49,7 @@
       <div class="form-item mb-9">
         <label for="password" class="form-item-label">Password*</label>
         <input id="password" type="password" class="form-item-input" name="password" placeholder="Enter your password"
-          pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/" required>
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$" required>
         <div class="validation-error">Incorrect password</div>
       </div>
 
@@ -142,6 +142,7 @@
         <label for="bio" class="form-item-label">Bio</label>
         <textarea name="bio" id="bio" cols="30" rows="7" class="form-item-textarea"
           placeholder="Tell about yourself"></textarea>
+        <div class="validation-error"></div>
       </div>
 
       <div class="form-actions grid-column-2">
