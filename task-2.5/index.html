@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fox Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="weather-widget">
+      <div class="widget-logo"></div>
+      <div class="widget-body">
+        <div class="search">
+          <input type="search" class="location-search">
+          <div class="search-details"></div>
+        </div>
+        <div class="current-weather"></div>
+        <div class="weather-list">
+          <div class="weather-item">
+            <div class="day">Mon</div>
+            <div class="img">
+              <img src="./icons/rain.svg" alt="rain">
+            </div>
+            <div class="description">Rain</div>
+            <div class="forecast">
+              <div class="time">Day</div>
+              <div class="temperature">+1 &#8451;</div>
+              <div class="temperature">+1 &#8451;</div>
+              <div class="time">Night</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/index.ts"></script>
+</body>
+
+</html>
