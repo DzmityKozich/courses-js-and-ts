@@ -1,5 +1,5 @@
-import { IMGS } from '../constants';
-import { DayWeather } from './DayWeather';
+import { IMGS } from '../../../constants';
+import { DayWeather } from '../DayWeather';
 
 export class WeatherList {
 	constructor(private weatherList: HTMLDivElement) {}

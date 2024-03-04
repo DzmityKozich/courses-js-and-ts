@@ -55,6 +55,22 @@ button {
 	align-items: center;
 }
 
+// Weather widget
+.weather-widget {
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	min-width: 350px;
+}
+
+.widget-logo {
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
 // Search
 .search {
 	position: relative;
@@ -100,71 +116,6 @@ button {
 	font-weight: 300;
 	line-height: 1.5rem;
 	color: #676767;
-}
-
-// Weather widget
-.weather-widget {
-	padding: 2rem;
-	border-radius: 10px;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	min-width: 350px;
-}
-
-.widget-logo {
-	width: 100%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 3rem;
-}
-
-.weather-list {
-	display: flex;
-	flex-direction: column;
-}
-
-.weather-item {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1rem 0;
-	border-top: 2px $light-gray solid;
-
-	& .day {
-		text-transform: uppercase;
-		font-size: 1.7rem;
-		font-weight: 400;
-		width: 55px;
-	}
-
-	& .weather {
-		font-size: 1.4rem;
-		font-weight: 400;
-		line-height: 2rem;
-	}
-
-	& .forecast {
-		text-align: right;
-	}
-
-	& .time {
-		font-size: 0.9rem;
-		font-weight: 300;
-		line-height: 1.3rem;
-	}
-
-	& .temperature {
-		font-size: 1.4rem;
-		font-weight: 500;
-		line-height: 2rem;
-	}
-}
-
-.time {
-	font-size: 1rem;
-	font-weight: 300;
-	text-align: right;
 }
 
 // Current weather
@@ -216,5 +167,49 @@ button {
 
 	& img {
 		max-width: unset;
+	}
+}
+
+// Weather list
+.weather-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.weather-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0;
+	border-top: 2px $light-gray solid;
+
+	& .day {
+		text-transform: uppercase;
+		font-size: 1.7rem;
+		font-weight: 400;
+		width: 55px;
+	}
+
+	& .weather {
+		font-size: 1.4rem;
+		font-weight: 400;
+		line-height: 2rem;
+	}
+
+	& .forecast {
+		text-align: right;
+	}
+
+	& .time {
+		font-size: 0.9rem;
+		font-weight: 300;
+		line-height: 1.3rem;
+	}
+
+	& .temperature {
+		font-size: 1.4rem;
+		font-weight: 500;
+		line-height: 2rem;
 	}
 }

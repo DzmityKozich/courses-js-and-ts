@@ -1,6 +1,6 @@
-import { IMGS } from '../constants';
-import { DayWeather } from './DayWeather';
-import { LocationSearchResult } from './types';
+import { IMGS } from '../../../constants';
+import { DayWeather } from '../DayWeather';
+import { LocationSearchResult } from '../../types';
 
 export class CurrentWeather {
 	constructor(private currentWeatherElement: HTMLDivElement) {}

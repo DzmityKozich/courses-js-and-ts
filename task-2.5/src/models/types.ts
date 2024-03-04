@@ -1,4 +1,4 @@
-import { DayWeather } from './DayWeather';
+import { DayWeather } from './entities/DayWeather';
 
 export enum Meteorology {
 	Thunderstorm = 'Thunderstorm',

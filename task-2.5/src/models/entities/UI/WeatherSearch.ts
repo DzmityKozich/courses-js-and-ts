@@ -1,6 +1,6 @@
-import { debounce } from '../common';
-import { Forecast, GeoCords, LocationSearchResult } from './types';
-import { ForecastSearchService } from './SearchService';
+import { debounce } from '../../../common';
+import { Forecast, LocationSearchResult } from '../../types';
+import { ForecastSearchService } from '../../../services/SearchService';
 
 export class WeatherSearch {
 	private service = new ForecastSearchService();
@@ -13,7 +13,7 @@ export class WeatherSearch {
 		this.inputElement.addEventListener('focus', (event: any) => {
 			this.toggleDetails(event);
 		});
-		this.inputElement.addEventListener('blur', (event: any) => {
+		this.inputElement.addEventListener('blur', () => {
 			this.hideDetails();
 		});
 		this.inputElement.addEventListener('click', (event: any) => {

@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { DailyTemperature, Temperature, Weather } from './types';
+import { DailyTemperature, Temperature, Weather } from '../types';
 import { HourForecast } from './ForecastResponce';
 
 import utc from 'dayjs/plugin/utc';

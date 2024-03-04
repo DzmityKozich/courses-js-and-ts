@@ -1,7 +1,7 @@
 import { CurrentWeather } from './CurrentWeather';
 import { WeatherList } from './WeatherList';
 import { WeatherSearch } from './WeatherSearch';
-import { Forecast } from './types';
+import { Forecast } from '../../types';
 
 export class WeatherWidget {
 	private weatherSearch: WeatherSearch;
