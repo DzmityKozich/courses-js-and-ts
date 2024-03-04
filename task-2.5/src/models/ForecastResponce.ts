@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { ForecastResponseDef, HourForecastDef, Meteorology, Weather } from './types';
+import { ForecastResponseDef, HourForecastDef, Weather } from './types';
 
 export class ForecastResponse {
 	public list: HourForecast[];

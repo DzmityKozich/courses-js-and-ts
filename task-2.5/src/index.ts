@@ -1,10 +1,12 @@
-import { WeatherSearch } from "./WeatherSearch";
-import dayjs from "dayjs";
+import { WeatherSearch } from './models/WeatherSearch';
+import dayjs from 'dayjs';
 
-import "../scss/styles.scss";
+import '../scss/styles.scss';
+import { WeatherWidget } from './models/WeatherWidget';
 
-const searchElement = document.querySelector<HTMLDivElement>(".search")!;
+// const searchElement = document.querySelector<HTMLDivElement>('.search')!;
 
-const weatherSearch = new WeatherSearch(searchElement);
+// const weatherSearch = new WeatherSearch(searchElement);
 
-// console.log(dayjs("2024-02-27").add(15, "hour"));
+const weatherWidgetElement = document.querySelector<HTMLDivElement>('.weather-widget')!;
+const weatherWidget = new WeatherWidget(weatherWidgetElement);

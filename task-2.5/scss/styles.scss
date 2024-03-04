@@ -1,83 +1,220 @@
 $default-color: #d64200;
 $gray: #b8b6bf;
-$light-gray: #f8f8f8;
+$light-gray: #dddddd;
 $red: #eb5757;
 $light-red: #ffcbba;
+$orange: #ff4f00;
 
 // Default
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-  font-size: 10px;
-  height: 100%;
+	font-size: 10px;
+	height: 100%;
 }
 
 body {
-  min-height: 100%;
-  height: 100%;
-  line-height: 1;
-  text-rendering: optimizeSpeed;
-  font-family: Arial;
-  letter-spacing: 0.02em;
-  line-height: 22px;
+	min-height: 100%;
+	height: 100%;
+	line-height: 1;
+	text-rendering: optimizeSpeed;
+	font-family: Roboto;
+	letter-spacing: 0.02em;
+	line-height: 22px;
 }
 
 ul {
-  list-style-position: inside;
+	list-style-position: inside;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 button {
-  border: 0;
-  cursor: pointer;
+	border: 0;
+	cursor: pointer;
 }
 
 // Main
 .container {
-  display: flex;
-  width: 100%;
-  min-height: 100%;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	width: 100%;
+	min-height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
+// Search
+.search {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.location-search {
+	width: 100%;
+	padding: 1.25rem 1rem;
+	border: 1px $gray solid;
+	border-radius: 7px;
+	margin-bottom: 1rem;
+	font-size: 1.4rem;
+	font-weight: 300;
+	line-height: 2rem;
+	font-family: Roboto;
+}
+
+.search-details {
+	position: absolute;
+	left: 0;
+	top: 45px;
+	padding: 0.5rem 0;
+	border: 1px $gray solid;
+	width: 100%;
+	background-color: #fff;
+	display: none;
+}
+
+.details-item {
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: $light-red;
+	}
+}
+
+.selected-location {
+	padding-left: 1rem;
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.5rem;
+	color: #676767;
+}
+
+// Weather widget
 .weather-widget {
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	min-width: 350px;
+}
+
+.widget-logo {
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 3rem;
 }
 
 .weather-list {
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .weather-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  border-top: 2px $gray solid;
-  min-width: 330px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0;
+	border-top: 2px $light-gray solid;
+
+	& .day {
+		text-transform: uppercase;
+		font-size: 1.7rem;
+		font-weight: 400;
+		width: 55px;
+	}
+
+	& .weather {
+		font-size: 1.4rem;
+		font-weight: 400;
+		line-height: 2rem;
+	}
+
+	& .forecast {
+		text-align: right;
+	}
+
+	& .time {
+		font-size: 0.9rem;
+		font-weight: 300;
+		line-height: 1.3rem;
+	}
+
+	& .temperature {
+		font-size: 1.4rem;
+		font-weight: 500;
+		line-height: 2rem;
+	}
 }
 
 .time {
-  font-size: 1rem;
-  font-weight: 300;
-  text-align: right;
+	font-size: 1rem;
+	font-weight: 300;
+	text-align: right;
+}
+
+// Current weather
+.current-weather-card {
+	background-color: $orange;
+	border-radius: 7px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	color: #fff;
+	padding: 1.75rem 0.5rem;
+	margin-bottom: 2.5rem;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.current-temp {
+	font-weight: 700;
+	font-size: 5rem;
+	line-height: 7rem;
+}
+
+.curent-weather-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4rem;
+	font-weight: 500;
+	max-width: 125px;
+}
+
+.current-weather {
+	font-weight: 500;
+}
+
+.current-location {
+	text-align: center;
+	white-space: normal;
+	font-weight: 300;
+}
+
+.current-weather-img {
+	background-color: #fff;
+	border-radius: 5px;
+	padding-left: 2px;
+	width: 75px;
+	overflow: hidden;
+
+	& img {
+		max-width: unset;
+	}
 }

@@ -1,9 +1,9 @@
 import dayjs from 'dayjs';
 import { DailyTemperature, Temperature, Weather } from './types';
-
-import isToday from 'dayjs/plugin/isToday';
-import utc from 'dayjs/plugin/utc';
 import { HourForecast } from './ForecastResponce';
+
+import utc from 'dayjs/plugin/utc';
+import isToday from 'dayjs/plugin/isToday';
 
 dayjs.extend(utc);
 dayjs.extend(isToday);
@@ -31,10 +31,17 @@ export class DayWeather {
 	constructor(date: dayjs.ConfigType, private forecast: HourForecast[], sunrise: dayjs.Dayjs, sunset: dayjs.Dayjs) {
 		this.date = dayjs(date).startOf('day');
 		this.sunrise = this.date.hour(sunrise.hour()).minute(sunrise.minute()).second(sunrise.second());
-		this.sunset = this.date.hour(sunset.hour()).minute(sunset.minute()).second(sunset.second());
+		this.sunset = this.calculateSunset(sunrise, sunset);
 		this.day = this.findDay();
 		this.temp = this.findTemp();
 		this.weather = this.getWeather();
+	}
+
+	private calculateSunset(sunrise: dayjs.Dayjs, sunset: dayjs.Dayjs): dayjs.Dayjs {
+		const diff = sunset.date() - sunrise.date();
+		const sunsetDate = this.date.hour(sunset.hour()).minute(sunset.minute()).second(sunset.second());
+		if (diff === 0) return sunsetDate;
+		return sunsetDate.add(1, 'day');
 	}
 
 	private findDay(): DayName {
@@ -44,10 +51,11 @@ export class DayWeather {
 	}
 
 	private findTemp(): DailyTemperature {
+		const todayTmp = Math.round(this.forecast[0].temp);
 		if (this.day === 'Now') {
-			return { day: 'n/a', night: 'n/a', current: this.forecast[0].temp };
+			return { day: 'n/a', night: 'n/a', current: todayTmp };
 		}
-		const current: Temperature = this.day === 'Today' ? this.forecast[0].temp : 'n/a';
+		const current: Temperature = this.day === 'Today' ? todayTmp : 'n/a';
 		return { day: this.findAvgTempFor('day'), night: this.findAvgTempFor('night'), current };
 	}
 
@@ -63,7 +71,8 @@ export class DayWeather {
 		const forecast = this.findForecastFor(time);
 		if (!forecast) return 'n/a';
 		const temps = forecast.map(({ temp }) => temp);
-		return temps.reduce((sum, temp) => (sum += temp), 0) / temps.length;
+		const avg = temps.reduce((sum, temp) => (sum += temp), 0) / temps.length;
+		return Math.round(avg);
 	}
 
 	private findForecastFor(time: 'day' | 'night'): HourForecast[] | null {
