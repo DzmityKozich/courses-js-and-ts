@@ -11,6 +11,7 @@ export class WeatherWidget {
 	constructor(private weatherWidget: HTMLDivElement) {
 		const weatherSearch = this.weatherWidget.querySelector<HTMLDivElement>('.search')!;
 		this.weatherSearch = new WeatherSearch(weatherSearch, this.onForecastSearch);
+		this.weatherSearch.setupListeners();
 		const weatherList = this.weatherWidget.querySelector<HTMLDivElement>('.weather-list')!;
 		this.weatherList = new WeatherList(weatherList);
 		const currentWeather = this.weatherWidget.querySelector<HTMLDivElement>('.current-weather-card')!;

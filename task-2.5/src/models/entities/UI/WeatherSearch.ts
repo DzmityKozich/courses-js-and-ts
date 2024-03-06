@@ -5,7 +5,9 @@ import { ForecastSearchService } from '../../../services/SearchService';
 export class WeatherSearch {
 	private service = new ForecastSearchService();
 
-	constructor(private searchElement: HTMLDivElement, private forecastSearch: (forecast: Forecast) => void) {
+	constructor(private searchElement: HTMLDivElement, private forecastSearch: (forecast: Forecast) => void) {}
+
+	public setupListeners(): void {
 		const inputDebounce = debounce(this.searchLocation, 300);
 		this.inputElement.addEventListener('keydown', (event: any) => {
 			setTimeout(() => inputDebounce(event.target.value));
