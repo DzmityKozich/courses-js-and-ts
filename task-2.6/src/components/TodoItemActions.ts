@@ -19,31 +19,28 @@ export class TodoItemActions {
 	}
 
 	public hideAllBtns(): void {
-		this.okBtn.style.display = 'none';
-		this.penBtn.style.display = 'none';
-		this.removeBtn.style.display = 'none';
+		this.okBtn.classList.add('hidden');
+		this.penBtn.classList.add('hidden');
+		this.removeBtn.classList.add('hidden');
 	}
 
 	public showOkBtnIf(condition: boolean): void {
-		const state = condition ? 'block' : 'none';
-		this.okBtn.style.display = state;
+		this.okBtn.classList.toggle('hidden', !condition);
 	}
 
 	public showPenBtnIf(condition: boolean): void {
-		const state = condition ? 'block' : 'none';
-		this.penBtn.style.display = state;
+		this.penBtn.classList.toggle('hidden', !condition);
 	}
 
 	public showRemoveBtnIf(condition: boolean): void {
-		const state = condition ? 'block' : 'none';
-		this.removeBtn.style.display = state;
+		this.removeBtn.classList.toggle('hidden', !condition);
 	}
 
 	private getHtml(): string {
 		return `
-			<button style="display: none" class="item-action-btn ok"><img src="./icons/ok.svg" alt=""></button>
-			<button style="display: none" class="item-action-btn pen"><img src="./icons/pen.svg" alt=""></button>
-			<button style="display: none" class="item-action-btn trash"><img src="./icons/trash.svg" alt=""></button>
+			<button class="hidden item-action-btn ok"><img src="./icons/ok.svg" alt=""></button>
+			<button class="hidden item-action-btn pen"><img src="./icons/pen.svg" alt=""></button>
+			<button class="hidden item-action-btn trash"><img src="./icons/trash.svg" alt=""></button>
 		`;
 	}
 }
