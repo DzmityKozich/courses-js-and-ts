@@ -14,119 +14,36 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="label">Where in the world?</div>
+  <div id="app">
+    <header class="header">
+      <div class="label">Where in the world?</div>
 
-    <div class="theme-toggle">
-      <!-- <input type="checkbox"> -->
-      <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS">Click on me</button>
-    </div>
-
-    <div class="search">
-      <form class="search-form">
-        <input type="text" placeholder="Search for a country....">
-        <button class="btn-search">
-          <img src="./icons/search.svg" alt="">
-        </button>
-      </form>
-    </div>
-
-    <div class="region-select">
-      <div class="menu">
-        <button class="menu-toggle">Region</button>
-        <div class="menu-list">
-          <div class="menu-item"></div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <div class="country-card">
-      <div class="card-img">
-        <img src="https://flagcdn.com/es.svg" alt="">
+      <div class="theme-toggle">
+        <!-- <input type="checkbox"> -->
+        <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS">Click on me</button>
       </div>
 
-      <div class="card-body">
-        <div class="country-name">Name</div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-      </div>
-    </div>
-    <div class="country-card">
-      <div class="card-img">
-        <img src="https://flagcdn.com/es.svg" alt="">
+      <div class="search">
+        <form class="search-form">
+          <input type="text" placeholder="Search for a country....">
+          <button type="submit" class="btn-search">
+            <img src="./icons/search.svg" alt="">
+          </button>
+        </form>
       </div>
 
-      <div class="card-body">
-        <div class="country-name">Name</div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
+      <div class="region-select">
+        <div class="menu">
+          <button class="menu-toggle">Region</button>
+          <div class="menu-list">
+            <div class="menu-item"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="country-card">
-      <div class="card-img">
-        <img src="https://flagcdn.com/es.svg" alt="">
-      </div>
+    </header>
 
-      <div class="card-body">
-        <div class="country-name">Name</div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-      </div>
-    </div>
-    <div class="country-card">
-      <div class="card-img">
-        <img src="https://flagcdn.com/es.svg" alt="">
-      </div>
-
-      <div class="card-body">
-        <div class="country-name">Name</div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-        <div class="country-stat">
-          <span class="stat-title">Population</span>
-          <span class="stat-value">11 000 000</span>
-        </div>
-      </div>
-    </div>
-  </main>
+    <main class="container"></main>
+  </div>
   <script type="module" src="/src/main.ts"></script>
 </body>
 

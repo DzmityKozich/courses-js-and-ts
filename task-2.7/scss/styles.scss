@@ -125,6 +125,7 @@ button {
 	display: grid;
 	grid-template-columns: repeat(4, auto);
 	justify-content: space-between;
+	row-gap: 1.5rem;
 }
 
 // Country Card
@@ -135,12 +136,13 @@ button {
 	box-shadow: 0px 4px 29px 0px #00000040;
 	border-radius: 10px;
 	overflow: hidden;
+	align-self: start;
 }
 
 .card-img {
 	border-radius: 10px;
 	overflow: hidden;
-	margin-bottom: -10px;
+	margin-bottom: -8px;
 }
 
 .card-body {
