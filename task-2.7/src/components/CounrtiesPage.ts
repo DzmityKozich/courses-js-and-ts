@@ -1,9 +1,11 @@
 import { CountryList } from './CountryLIst';
 import { CountrySearch, SearchCountryCb } from './CountrySearch';
+import { RegionSelect } from './RegionSelect';
 
 export class CountriesPage {
 	private counrySearch: CountrySearch;
 	private countryList: CountryList;
+	private regionSelect: RegionSelect;
 
 	constructor(private page: HTMLElement) {
 		const countrySearch = this.page.querySelector<HTMLDivElement>('.search')!;
@@ -11,6 +13,9 @@ export class CountriesPage {
 		this.counrySearch.setupListeners();
 		const countryList = this.page.querySelector<HTMLDivElement>('.container')!;
 		this.countryList = new CountryList(countryList);
+		const reigonSelect = this.page.querySelector<HTMLDivElement>('.menu')!;
+		this.regionSelect = new RegionSelect(reigonSelect);
+		this.regionSelect.setupListeners();
 	}
 
 	private onCountrySearch: SearchCountryCb = (err, res) => {

@@ -1,6 +1,6 @@
 :root {
 	--color-default: #f8f8f8;
-	--search-bg: #fff;
+	--el-bg-white: #fff;
 	--text-color: #000;
 	// --border-color: #fff;
 }
@@ -58,8 +58,13 @@ button {
 // Themes
 [data-theme='dark'] {
 	--color-default: #242424;
-	--search-bg: #242424;
+	--el-bg-white: #242424;
 	--text-color: #fff;
+}
+
+// Common
+.border-0 {
+	border: none !important;
 }
 
 // Header
@@ -83,7 +88,7 @@ button {
 .search-form {
 	display: flex;
 	width: 375px;
-	background-color: var(--search-bg);
+	background-color: var(--el-bg-white);
 	border: 1px $light-gray solid;
 	border-radius: 10px;
 	overflow: hidden;
@@ -104,7 +109,7 @@ button {
 
 .btn-search {
 	width: 10%;
-	background-color: var(--search-bg);
+	background-color: var(--el-bg-white);
 	transition: background-color 0.3s ease;
 	display: flex;
 	justify-content: center;
@@ -116,6 +121,58 @@ button {
 
 	& img {
 		width: 75%;
+	}
+}
+
+// Region selector
+.menu {
+	position: relative;
+	width: 140px;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 0.7rem;
+	font-weight: 400;
+	line-height: 1px;
+	background-color: var(--el-bg-white);
+	padding: 0.75rem 1.75rem;
+	border-radius: 10px;
+	border: 1px $light-gray solid;
+	color: var(--text-color);
+	z-index: 10;
+	box-shadow: 0px 3px 5px 0px #00000040;
+}
+
+.menu-list {
+	position: absolute;
+	width: 100%;
+	top: 1rem;
+	font-size: 0.5rem;
+	font-weight: 400;
+	line-height: 1rem;
+	background-color: var(--el-bg-white);
+	padding-top: 0.75rem;
+	border-radius: 10px;
+	border: 1px $light-gray solid;
+	overflow: hidden;
+	transition: height 0.15s ease;
+	color: var(--text-color);
+}
+
+.menu-item {
+	border-top: 1px $light-gray solid;
+	cursor: pointer;
+	padding: 0.25rem 0.5rem;
+
+	&:hover {
+		background-color: $light-gray;
+	}
+
+	&:first-child {
+		border: 0;
 	}
 }
 

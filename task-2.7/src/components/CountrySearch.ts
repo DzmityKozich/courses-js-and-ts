@@ -8,6 +8,7 @@ export class CountrySearch {
 	private searchInput: HTMLInputElement;
 	private searchBtn: HTMLButtonElement;
 
+	// TODO: move to CountryPage class
 	private searchService = new SearchService();
 
 	constructor(private searchElement: HTMLDivElement, private searchCountry: SearchCountryCb) {
