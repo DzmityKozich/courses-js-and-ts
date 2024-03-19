@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
 	readonly VITE_SEARCH_BY_NAME_URL: string;
+	readonly VITE_SEARCH_BY_RESION_URL: string;
 }
 
 interface ImportMeta {

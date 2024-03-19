@@ -1,7 +1,4 @@
-import { CountrySearchError, CountrySearchResult } from '../models/types';
-import { SearchService } from '../services/SearchService';
-
-export type SearchCountryCb = (error: CountrySearchError | null, result: CountrySearchResult[] | null) => void;
+export type SearchCountryCb = (name: string) => void;
 
 export class CountrySearch {
 	private searchForm: HTMLFormElement;
@@ -9,7 +6,7 @@ export class CountrySearch {
 	private searchBtn: HTMLButtonElement;
 
 	// TODO: move to CountryPage class
-	private searchService = new SearchService();
+	// private searchService = new SearchService();
 
 	constructor(private searchElement: HTMLDivElement, private searchCountry: SearchCountryCb) {
 		this.searchForm = this.searchElement.querySelector<HTMLFormElement>('.search-form')!;
@@ -25,13 +22,7 @@ export class CountrySearch {
 	private searchCountryByName = () => {
 		const name = this.searchInput.value;
 		if (name) {
-			this.searchService.searchByName(name).then((res) => {
-				if (Array.isArray(res)) {
-					this.searchCountry(null, res);
-				} else {
-					this.searchCountry(res, null);
-				}
-			});
+			this.searchCountry(name);
 		}
 	};
 }

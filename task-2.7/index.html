@@ -19,8 +19,9 @@
       <div class="label">Where in the world?</div>
 
       <div class="theme-toggle">
-        <!-- <input type="checkbox"> -->
-        <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS">Click on me</button>
+        <button class="theme-toggle-btn" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS">
+          <div class="toggle-marker"></div>
+        </button>
       </div>
 
       <div class="search">
@@ -35,7 +36,7 @@
       <div class="region-select">
         <div class="menu">
           <button class="menu-toggle">Region</button>
-          <div class="menu-list" style="height: 0;">
+          <div class="menu-list hidden">
             <div class="menu-item" data-region="asia">Asia</div>
             <div class="menu-item" data-region="europe">Europe</div>
             <div class="menu-item" data-region="america">America</div>
