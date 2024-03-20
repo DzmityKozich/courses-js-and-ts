@@ -1,8 +1,7 @@
 :root {
 	--color-default: #f8f8f8;
-	--el-bg-white: #fff;
+	--el-bg-primary: #fff;
 	--text-color: #000;
-	// --border-color: #fff;
 }
 
 $default-color: #d64200;
@@ -12,6 +11,36 @@ $red: #eb5757;
 $light-red: #ffcbba;
 $orange: #ff4f00;
 $green: #00ae1c;
+
+@mixin max1500 {
+	@media (max-width: 1500px) {
+		@content;
+	}
+}
+
+@mixin max1200 {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin max900 {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin max700 {
+	@media (max-width: 700px) {
+		@content;
+	}
+}
+
+@mixin max600 {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
 
 // Default
 *,
@@ -58,7 +87,7 @@ button {
 // Themes
 [data-theme='dark'] {
 	--color-default: #242424;
-	--el-bg-white: #242424;
+	--el-bg-primary: #242424;
 	--text-color: #fff;
 }
 
@@ -92,6 +121,20 @@ button {
 	justify-content: space-between;
 	row-gap: 2rem;
 	align-items: center;
+
+	@include max900 {
+		padding: 2rem;
+	}
+
+	@include max700 {
+		padding: 0.5rem;
+	}
+
+	@include max600 {
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(4, auto);
+		row-gap: 0.5rem;
+	}
 }
 
 .label {
@@ -99,12 +142,16 @@ button {
 	font-weight: 700;
 	line-height: 3rem;
 	color: var(--text-color);
+
+	@include max600 {
+		text-align: center;
+	}
 }
 
 .search-form {
 	display: flex;
 	width: 375px;
-	background-color: var(--el-bg-white);
+	background-color: var(--el-bg-primary);
 	border: 1px $light-gray solid;
 	border-radius: 10px;
 	overflow: hidden;
@@ -122,11 +169,15 @@ button {
 		line-height: 1rem;
 		background-color: transparent;
 	}
+
+	@include max600 {
+		width: 100%;
+	}
 }
 
 .btn-search {
 	width: 10%;
-	background-color: var(--el-bg-white);
+	background-color: var(--el-bg-primary);
 	transition: background-color 0.3s ease;
 	display: flex;
 	justify-content: center;
@@ -144,6 +195,10 @@ button {
 // Theme toggle button
 .theme-toggle {
 	justify-self: end;
+
+	@include max600 {
+		grid-row: 1 / 1;
+	}
 }
 
 .theme-toggle-btn {
@@ -180,22 +235,46 @@ button {
 	position: relative;
 	width: 140px;
 	height: 40px;
+
+	@include max600 {
+		width: 100%;
+	}
 }
 
 .menu-toggle {
 	position: absolute;
 	top: 0;
 	left: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	font-size: 0.7rem;
 	font-weight: 400;
 	line-height: 1px;
-	background-color: var(--el-bg-white);
-	padding: 0.75rem 1.75rem;
+	background-color: var(--el-bg-primary);
+	padding: 0.75rem 1.25rem;
 	border-radius: 10px;
 	border: 1px $light-gray solid;
 	color: var(--text-color);
 	z-index: 10;
 	box-shadow: 0px 3px 5px 0px #0000001f;
+
+	&.open .menu-toggle-arrow {
+		transform: rotate(180deg);
+	}
+}
+
+.menu-toggle-arrow {
+	display: inline-block;
+	width: 12px;
+	height: 7px;
+	transition: transform 0.15s ease;
+
+	& svg {
+		stroke: var(--text-color);
+	}
 }
 
 .menu-list {
@@ -205,7 +284,7 @@ button {
 	font-size: 0.5rem;
 	font-weight: 400;
 	line-height: 1rem;
-	background-color: var(--el-bg-white);
+	background-color: var(--el-bg-primary);
 	padding-top: 0.75rem;
 	border-radius: 10px;
 	border: 1px $light-gray solid;
@@ -236,6 +315,19 @@ button {
 	grid-template-columns: repeat(4, auto);
 	justify-content: space-between;
 	row-gap: 1.5rem;
+
+	@include max1500 {
+		grid-template-columns: repeat(3, auto);
+	}
+
+	@include max1200 {
+		grid-template-columns: repeat(2, auto);
+	}
+
+	@include max900 {
+		padding: 0.75rem;
+		justify-content: space-evenly;
+	}
 }
 
 // Country Card
@@ -247,6 +339,10 @@ button {
 	border-radius: 10px;
 	overflow: hidden;
 	align-self: start;
+
+	@include max700 {
+		width: 250px;
+	}
 }
 
 .card-img {
