@@ -1,0 +1,200 @@
+@import './definitions.scss';
+
+// Header
+.header {
+	padding: 4.5rem;
+	padding-bottom: 0;
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+	row-gap: 2rem;
+	align-items: center;
+
+	@include max900 {
+		padding: 2rem;
+	}
+
+	@include max700 {
+		padding: 0.5rem;
+	}
+
+	@include max600 {
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(4, auto);
+		row-gap: 0.5rem;
+	}
+}
+
+.label {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 3rem;
+	color: var(--text-color);
+
+	@include max600 {
+		text-align: center;
+		font-size: 1.25rem;
+	}
+}
+
+.search-form {
+	display: flex;
+	width: 375px;
+	background-color: var(--el-bg-primary);
+	border: 1px $gray solid;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 3px 5px 0px #0000001f;
+
+	& input[type='text'] {
+		color: var(--text-color);
+		width: 90%;
+		padding: 0.5rem 0.5rem;
+		outline: none;
+		border: 0;
+		font-family: Arial;
+		font-size: 0.7rem;
+		font-weight: 400;
+		line-height: 1rem;
+		background-color: transparent;
+	}
+
+	@include max600 {
+		width: 100%;
+	}
+}
+
+.btn-search {
+	width: 10%;
+	background-color: var(--el-bg-primary);
+	transition: background-color 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		background-color: $light-gray;
+	}
+
+	& img {
+		width: 75%;
+
+		@include max600 {
+			width: 65%;
+		}
+	}
+}
+
+// Theme toggle button
+.theme-toggle {
+	justify-self: end;
+
+	@include max600 {
+		grid-row: 1 / 1;
+	}
+}
+
+.theme-toggle-btn {
+	width: 2.5rem;
+	height: 1.25rem;
+	background-color: #242424;
+	border-radius: 100px;
+	box-shadow: 0px 3px 5px 0px #0000001f;
+	border: 1px $light-gray solid;
+	padding: 3px;
+	display: flex;
+}
+
+.toggle-marker {
+	width: 0.9rem;
+	height: 0.9rem;
+	background-color: $orange;
+	border-radius: 50%;
+	transition: all 0.15s ease;
+	background-image: url(../icons/sunnye-fox.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 15px 17px;
+
+	&.active {
+		transform: translateX(1.25rem);
+		background-color: #2400ff;
+		background-image: url(../icons/monn-fox.svg);
+	}
+}
+
+// Region selector
+.menu {
+	position: relative;
+	width: 140px;
+	height: 40px;
+
+	@include max600 {
+		width: 100%;
+	}
+}
+
+.menu-toggle {
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.7rem;
+	font-weight: 400;
+	line-height: 1rem;
+	background-color: var(--el-bg-primary);
+	padding: 0.5rem 1.25rem;
+	border-radius: 10px;
+	border: 1px $gray solid;
+	color: var(--text-color);
+	z-index: 10;
+	box-shadow: 0px 3px 5px 0px #0000001f;
+
+	&.open .menu-toggle-arrow {
+		transform: rotate(180deg);
+	}
+}
+
+.menu-toggle-arrow {
+	width: 14px;
+	transition: transform 0.15s ease;
+
+	& svg {
+		stroke: var(--text-color);
+	}
+}
+
+.menu-list {
+	position: absolute;
+	width: 100%;
+	top: 1rem;
+	font-size: 0.5rem;
+	font-weight: 400;
+	line-height: 1rem;
+	background-color: var(--el-bg-primary);
+	padding-top: 0.75rem;
+	border-radius: 10px;
+	border: 1px $gray solid;
+	overflow: hidden;
+	transition: height 0.15s ease;
+	color: var(--text-color);
+	box-shadow: 0px 3px 5px 0px #00000007;
+}
+
+.menu-item {
+	border-top: 1px $gray solid;
+	cursor: pointer;
+	padding: 0.25rem 0.5rem;
+
+	&:hover {
+		background-color: var(--highlight);
+	}
+
+	&:first-child {
+		border: 0;
+	}
+}

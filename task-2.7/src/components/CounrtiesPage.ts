@@ -17,7 +17,7 @@ export class CountriesPage {
 		const countrySearch = this.page.querySelector<HTMLDivElement>('.search')!;
 		this.counrySearch = new CountrySearch(countrySearch, this.onCountrySearch);
 		this.counrySearch.setupListeners();
-		const countryList = this.page.querySelector<HTMLDivElement>('.container')!;
+		const countryList = this.page.querySelector<HTMLDivElement>('.card-list')!;
 		this.countryList = new CountryList(countryList);
 		const reigonSelect = this.page.querySelector<HTMLDivElement>('.menu')!;
 		this.regionSelect = new RegionSelect(reigonSelect, this.selectRegion);
