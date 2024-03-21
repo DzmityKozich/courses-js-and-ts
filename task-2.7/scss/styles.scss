@@ -1,12 +1,14 @@
 @import './definitions.scss';
 @import './header.scss';
 @import './card.scss';
+@import './toast.scss';
 
 :root {
 	--color-default: #f8f8f8;
 	--el-bg-primary: #fff;
 	--text-color: #000;
 	--highlight: #efefef;
+	--toast-bg: #242424;
 }
 
 // Themes
@@ -15,6 +17,7 @@
 	--el-bg-primary: #242424;
 	--text-color: #fff;
 	--highlight: #b8b6bf;
+	--toast-bg: #efefef;
 }
 
 // Default

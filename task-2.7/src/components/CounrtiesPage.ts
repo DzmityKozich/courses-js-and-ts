@@ -4,12 +4,14 @@ import { CountryList } from './CountryList';
 import { CountrySearch, SearchCountryCb } from './CountrySearch';
 import { RegionSelect, SelectRegionCb } from './RegionSelect';
 import { ThemeToggle } from './ThemeToggle';
+import { ToasContainer } from './Toast';
 
 export class CountriesPage {
 	private counrySearch: CountrySearch;
 	private countryList: CountryList;
 	private regionSelect: RegionSelect;
 	private themeToggle: ThemeToggle;
+	private toastContainer: ToasContainer;
 
 	private searchService = new SearchService();
 
@@ -25,6 +27,8 @@ export class CountriesPage {
 		const themeToggle: HTMLButtonElement = this.page.querySelector('.theme-toggle-btn')!;
 		this.themeToggle = new ThemeToggle(themeToggle);
 		this.themeToggle.setupListeners();
+		const toastContainer = this.page.querySelector<HTMLDivElement>('.toast-container')!;
+		this.toastContainer = new ToasContainer(toastContainer);
 	}
 
 	private onCountrySearch: SearchCountryCb = (name) => {
@@ -35,6 +39,8 @@ export class CountriesPage {
 			})
 			.catch((err: CountrySearchError) => {
 				console.log(err);
+				const message = err.status === 404 ? 'Not found' : 'Something wrong :(';
+				this.toastContainer.addToast(message);
 			});
 	};
 
@@ -46,6 +52,8 @@ export class CountriesPage {
 			})
 			.catch((err: CountrySearchError) => {
 				console.log(err);
+				const message = err.status === 404 ? 'Not found' : 'Something wrong :(';
+				this.toastContainer.addToast(message);
 			});
 	};
 }
