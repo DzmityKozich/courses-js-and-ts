@@ -10,7 +10,7 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 999;
+	z-index: 99;
 }
 
 // Header
@@ -95,7 +95,7 @@ body {
 
 // News subscription
 .news-subscribe {
-	padding: 0 7rem;
+	padding: 3rem 7rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
