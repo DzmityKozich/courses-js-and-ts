@@ -1,0 +1,124 @@
+@import './definitions.scss';
+
+// Default
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 24px;
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	height: 100%;
+	line-height: 1;
+	text-rendering: optimizeSpeed;
+	font-family: Roboto;
+	letter-spacing: 0.02em;
+	line-height: 22px;
+	background-color: var(--color-default);
+}
+
+ul {
+	list-style-position: inside;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+button {
+	border: 0;
+	cursor: pointer;
+}
+
+// Common
+.border-0 {
+	border: none !important;
+}
+
+.p-0 {
+	padding: 0 !important;
+}
+
+.hidden {
+	display: none;
+}
+
+.justify-end {
+	justify-content: end !important;
+}
+
+.justify-start {
+	justify-content: start !important;
+}
+
+// Background
+
+.bg-black {
+	background-color: #000;
+}
+
+.bg-white {
+	background-color: #fff;
+}
+
+.bg-transparent {
+	background-color: rgba(0, 0, 0, 0.45);
+}
+
+.bg-orange {
+	background-color: $orange !important;
+}
+
+.bg-light-gray {
+	background-color: $light-gray !important;
+}
+
+// Containers
+
+.container {
+	padding: 2rem 10rem;
+}
+
+.items-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+// Button
+.btn {
+	padding: 0.75rem 2rem;
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 500;
+	color: #fff;
+	background-color: #000;
+}
+
+.btn-lg {
+	padding: 0.75rem 8rem;
+}
+
+// Input
+.form-input {
+	padding: 0.75rem;
+	background-color: transparent;
+	border: 1px $gray solid;
+	outline: none;
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 500;
+	width: 100%;
+}

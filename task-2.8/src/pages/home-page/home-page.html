@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox Store</title>
+  <script type="module" src="../../components/footer/footer.ts"></script>
+  <script type="module" src="../../components/navbar/navbar.ts"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="home-page">
+    <header class="header">
+      <div class="nav-bar">
+        <fox-navbar background="transparent"></fox-navbar>
+      </div>
+
+      <div class="title">
+        Discover foxlife
+        <div class="sub-title">
+          Lorem ipsum dolor sit amet consectetur. Phar eget turpis sem ultricies dolor sit amet consectetur.
+        </div>
+      </div>
+      <img src="../../../icons/home-page/header.png" alt="">
+    </header>
+
+    <div class="container">
+      <div class="items-container">
+        <div class="animal-cards">
+          <div class="animal-card">
+            <div class="animal-card-body">
+              <div class="animal-card-tag">#food</div>
+              <div class="animal-card-title">
+                Lorem ipsum dolor sit amet ipsum
+              </div>
+            </div>
+            <div class="animal-card-img">
+              <img src="../../../icons/home-page/chicken.png" alt="chicken">
+            </div>
+          </div>
+
+          <div class="animal-card">
+            <div class="animal-card-body">
+              <div class="animal-card-tag">#food</div>
+              <div class="animal-card-title">
+                Lorem ipsum dolor sit amet ipsum
+              </div>
+            </div>
+            <div class="animal-card-img right">
+              <img src="../../../icons/home-page/rooster.png" alt="chicken">
+            </div>
+          </div>
+
+          <div class="animal-card big">
+            <div class="animal-card-body">
+              <div class="animal-card-tag">#food</div>
+              <div class="animal-card-title">
+                Lorem ipsum dolor sit amet ipsum
+              </div>
+            </div>
+            <div class="animal-card-img">
+              <img src="../../../icons/home-page/fox.png" alt="chicken">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-lg bg-orange">All foxes</button>
+      </div>
+    </div>
+
+    <div class="container bg-light-gray">
+      <div class="news-subscribe">
+        <div class="news-subscribe-title">
+          Join our newsletter
+        </div>
+        <div class="news-subscribe-sub-title">
+          Lorem ipsum dolor sit amet consectetur. Molestie turpis quis turpis fermentum egestas bibendum.Lorem ipsum
+          dolor sit amet consectetur.
+        </div>
+        <form class="news-subscribe-form">
+          <input type="text" class="form-input" placeholder="Enter email" name="email">
+          <button class="btn" type="button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <fox-footer></fox-footer>
+  </div>
+
+  <script type="module" src="./home-page.ts"></script>
+</body>
+
+</html>

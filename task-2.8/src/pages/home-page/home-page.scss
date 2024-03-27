@@ -1,0 +1,124 @@
+@import '../../../scss/definitions.scss';
+
+body {
+	font-family: Montserrat;
+}
+
+// Navbar
+.nav-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+// Header
+.header {
+	position: relative;
+}
+
+.title {
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	color: #fff;
+	font-family: Playfair Display;
+	font-size: 3.3rem;
+	font-weight: 700;
+	width: 500px;
+	line-height: 90px;
+}
+
+.sub-title {
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+// Animal Cards
+.animal-cards {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	gap: 1rem;
+	margin-bottom: 3rem;
+}
+
+.animal-card {
+	background-color: $light-gray;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto auto;
+	padding: 1rem;
+	// align-items: start;
+
+	&.big {
+		grid-row: 1 / span 2;
+		grid-column: 2;
+
+		& .animal-card-body {
+			grid-column: 1 / 2;
+		}
+	}
+}
+
+.animal-card-tag {
+	background-color: red;
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 27px;
+	text-transform: capitalize;
+	color: $gray;
+}
+
+.animal-card-img {
+	background-color: green;
+	grid-row: 1 / span 2;
+	grid-column: 2;
+	justify-self: center;
+
+	&.right {
+		grid-column: 1;
+	}
+}
+
+.animal-card-title {
+	background-color: yellow;
+	font-family: Playfair Display;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 34px;
+}
+
+// News subscription
+.news-subscribe {
+	padding: 0 7rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.news-subscribe-title {
+	font-family: Montserrat;
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 48px;
+	margin-bottom: 0.25rem;
+}
+
+.news-subscribe-sub-title {
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 27px;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.news-subscribe-form {
+	width: 100%;
+	display: flex;
+}
