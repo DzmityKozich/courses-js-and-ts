@@ -4,6 +4,7 @@ import { LitComponent } from '../../LitComponent';
 import '../../share/icon';
 
 import './navbar.scss';
+import { sidebarToggle } from '../sidebar/sidebar-toggle';
 
 @customElement('fox-navbar')
 export class Navbar extends LitComponent {
@@ -25,6 +26,11 @@ export class Navbar extends LitComponent {
 		}
 	}
 
+	private openSidebar = (event: any) => {
+		console.log(event);
+		sidebarToggle.toggle('open');
+	};
+
 	// TODO: change img depends on bg-color
 	protected render() {
 		return html`
@@ -41,8 +47,12 @@ export class Navbar extends LitComponent {
 				</div>
 
 				<div class="basket">
-					<img src="../../../icons/navbar/basket.svg" alt="basket" />
-					<img src="../../../icons/navbar/fox.svg" alt="fox" />
+					<button class="btn btn-img" @click=${this.openSidebar}>
+						<img src="../../../icons/navbar/basket.svg" alt="basket" />
+					</button>
+					<button class="btn btn-img">
+						<img src="../../../icons/navbar/fox.svg" alt="fox" />
+					</button>
 				</div>
 			</nav>
 		`;

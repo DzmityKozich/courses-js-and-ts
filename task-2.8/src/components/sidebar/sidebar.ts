@@ -1,21 +1,30 @@
 import { TemplateResult, html } from 'lit';
 import { LitComponent } from '../../LitComponent';
-import { customElement } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
+import { sidebarToggle } from './sidebar-toggle';
+import { classMap } from 'lit/directives/class-map.js';
 
 import './sidebar.scss';
 
 @customElement('fox-sidebar')
 export class Sidebar extends LitComponent {
-	private onBackdropClick = (event: any) => {
-		console.log(event);
+	@state()
+	private isOpen: boolean = false;
+
+	private onBackdropClick = () => {
+		this.isOpen = false;
 	};
 
 	connectedCallback(): void {
-		// TODO: listen for toggle here
+		super.connectedCallback();
+		sidebarToggle.onToggle((state) => {
+			this.isOpen = state === 'open';
+		});
 	}
 
 	protected render(): TemplateResult {
-		return html` <div class="sidebar">
+		const classes = { open: this.isOpen };
+		return html` <div class="sidebar ${classMap(classes)}">
 			<div class="backdrop" @click=${this.onBackdropClick}></div>
 			<div class="sidebar-content">CONTENT</div>
 		</div>`;
