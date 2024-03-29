@@ -1,0 +1,8 @@
+.rating {
+	display: flex;
+	flex-direction: row;
+
+	& svg {
+		margin-left: 2px;
+	}
+}

@@ -1,2 +1,2 @@
 import '../../../scss/styles.scss';
-import './all-items.scss';
+import './our-history.scss';

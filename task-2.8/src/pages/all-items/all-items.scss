@@ -1,0 +1,81 @@
+@import '../../../scss/definitions.scss';
+
+.items {
+	display: flex;
+	flex-direction: row;
+	padding: 2rem 0;
+}
+
+.items-filter {
+	width: 30%;
+	padding-right: 1rem;
+}
+
+.item-list {
+}
+
+.item-card {
+	display: flex;
+	flex-direction: column;
+	width: 17.5rem;
+	font-family: Montserrat;
+}
+
+.item-card-img {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.item-card-btn {
+	position: absolute;
+	z-index: 9;
+	top: 15px;
+	right: 15px;
+	color: #fff;
+	background-color: $orange;
+	width: 55px;
+	height: 55px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.5rem;
+	font-weight: 400;
+	transition: background-color 0.15s ease;
+
+	&:active {
+		background-color: lighten($color: $orange, $amount: 5);
+	}
+}
+
+.plus-symbol {
+	font-size: 33px;
+	font-weight: 600;
+	line-height: 33px;
+}
+
+.item-card-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 0.5rem;
+	align-items: center;
+}
+
+.item-name {
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.item-price {
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.item-section {
+	font-size: 0.66rem;
+	font-weight: 400;
+	color: $gray;
+	text-transform: capitalize;
+}

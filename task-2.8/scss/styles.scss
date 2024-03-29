@@ -25,7 +25,7 @@ body {
 	font-family: Roboto;
 	letter-spacing: 0.02em;
 	line-height: 22px;
-	background-color: var(--color-default);
+	background-color: #fefefe;
 }
 
 ul {
@@ -73,7 +73,6 @@ button {
 }
 
 // Background
-
 .bg-black {
 	background-color: #000;
 }
@@ -94,8 +93,12 @@ button {
 	background-color: $light-gray !important;
 }
 
-// Containers
+// Text
+.text-black {
+	color: #000 !important;
+}
 
+// Containers
 .container {
 	padding: 2rem 10rem;
 }

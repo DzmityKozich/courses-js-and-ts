@@ -4,11 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fox Shop</title>
+  <title>Fox Store</title>
+  <script type="module" src="../../components/footer/footer.ts"></script>
+  <script type="module" src="../../components/navbar/navbar.ts"></script>
+  <script type="module" src="../../components/sidebar/sidebar.ts"></script>
+  <script type="module" src="../../share/page-title/page-title.ts"></script>
+  <script type="module" src="../../share/rating/rating.ts"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <fox-navbar background="white"></fox-navbar>
+  <fox-page-title subtitle="Home/All items" pagetitle="All Items"></fox-page-title>
+
+  <div class="container">
+    <div class="items">
+      <div class="items-filter">
+
+      </div>
+
+      <div class="item-list">
+        <div class="item-card">
+          <div class="item-card-img">
+            <img src="../../../icons/all-items/fox1.png" alt="fox">
+            <button class="item-card-btn">
+              <span class="plus-symbol">+</span>
+              Add
+            </button>
+          </div>
+
+          <div class="item-card-body">
+            <div class="item-name">Stylish chair</div>
+            <div class="item-price">$120.00</div>
+            <div class="item-rating">
+              <fox-rating rating="4"></fox-rating>
+            </div>
+            <div class="item-section">forest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <h1>All items page!</h1>
+  <script type="module" src="./all-items.ts"></script>
 </body>
 
 </html>
