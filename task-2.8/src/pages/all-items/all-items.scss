@@ -12,70 +12,49 @@
 }
 
 .item-list {
+	display: grid;
+	grid-template-columns: auto auto;
+	column-gap: 2.25rem;
+	row-gap: 2rem;
 }
 
-.item-card {
+.items-filter {
 	display: flex;
 	flex-direction: column;
-	width: 17.5rem;
+}
+
+.filter-label {
 	font-family: Montserrat;
+	font-size: 0.66rem;
+	font-weight: 400;
 }
 
-.item-card-img {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-	border-radius: 10px;
-}
-
-.item-card-btn {
-	position: absolute;
-	z-index: 9;
-	top: 15px;
-	right: 15px;
-	color: #fff;
-	background-color: $orange;
-	width: 55px;
-	height: 55px;
+.filter-topic {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	font-size: 0.5rem;
-	font-weight: 400;
-	transition: background-color 0.15s ease;
 
-	&:active {
-		background-color: lighten($color: $orange, $amount: 5);
+	& input {
+		display: none;
 	}
 }
 
-.plus-symbol {
-	font-size: 33px;
-	font-weight: 600;
-	line-height: 33px;
+.filter-topic-item {
+	padding: 0.5rem;
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 500;
+	cursor: pointer;
+	border-bottom: 1px $light-gray solid;
+
+	&:last-child {
+		border-bottom: 0;
+	}
 }
 
-.item-card-body {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding-top: 0.5rem;
-	align-items: center;
-}
-
-.item-name {
-	font-size: 0.8rem;
-	font-weight: 700;
-}
-
-.item-price {
-	font-size: 0.8rem;
-	font-weight: 600;
-}
-
-.item-section {
-	font-size: 0.66rem;
-	font-weight: 400;
-	color: $gray;
-	text-transform: capitalize;
+#all:checked ~ label[for='all'],
+#forest:checked ~ label[for='forest'],
+#kids:checked ~ label[for='kids'],
+#other:checked ~ label[for='other'] {
+	background-color: $orange;
+	color: #fff;
 }

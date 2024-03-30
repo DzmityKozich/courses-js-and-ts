@@ -10,6 +10,8 @@
   <script type="module" src="../../components/sidebar/sidebar.ts"></script>
   <script type="module" src="../../share/page-title/page-title.ts"></script>
   <script type="module" src="../../share/rating/rating.ts"></script>
+  <script type="module" src="../../components/fox-item-card/fox-item-card.ts"></script>
+  <script type="module" src="../../share/range/range.ts"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -20,39 +22,50 @@
 </head>
 
 <body>
-  <fox-navbar background="white"></fox-navbar>
-  <fox-page-title subtitle="Home/All items" pagetitle="All Items"></fox-page-title>
+  <div id="all-items">
+    <fox-navbar background="white"></fox-navbar>
+    <fox-page-title subtitle="Home/All items" pagetitle="All Items"></fox-page-title>
 
-  <div class="container">
-    <div class="items">
-      <div class="items-filter">
-
-      </div>
-
-      <div class="item-list">
-        <div class="item-card">
-          <div class="item-card-img">
-            <img src="../../../icons/all-items/fox1.png" alt="fox">
-            <button class="item-card-btn">
-              <span class="plus-symbol">+</span>
-              Add
-            </button>
+    <div class="container">
+      <div class="items">
+        <form class="items-filter">
+          <div class="filter-search">
+            <input type="text" name="search" class="form-input" placeholder="Search">
           </div>
 
-          <div class="item-card-body">
-            <div class="item-name">Stylish chair</div>
-            <div class="item-price">$120.00</div>
-            <div class="item-rating">
-              <fox-rating rating="4"></fox-rating>
-            </div>
-            <div class="item-section">forest</div>
+          <div class="filter-topic">
+            <label class="filter-label">Topic</label>
+            <input type="radio" name="topic" id="all" value="all">
+            <input type="radio" name="topic" id="forest" value="forest">
+            <input type="radio" name="topic" id="kids" value="kids">
+            <input type="radio" name="topic" id="other" value="other">
+            <label for="all" class="filter-topic-item">
+              All
+            </label>
+            <label for="forest" class="filter-topic-item">
+              Forest
+            </label>
+            <label for="kids" class="filter-topic-item">
+              Foxes kids
+            </label>
+            <label for="other" class="filter-topic-item">
+              Other
+            </label>
           </div>
-        </div>
+
+          <div class="filter-price">
+            <label class="filter-label">Price</label>
+            <fox-range></fox-range>
+            <div class="price-value">Value: $80</div>
+          </div>
+        </form>
+
+        <div class="item-list"></div>
       </div>
     </div>
-  </div>
 
-  <h1>All items page!</h1>
+    <fox-footer></fox-footer>
+  </div>
   <script type="module" src="./all-items.ts"></script>
 </body>
 
