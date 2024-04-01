@@ -7,8 +7,8 @@
 }
 
 .items-filter {
-	width: 30%;
 	padding-right: 1rem;
+	min-width: 200px;
 }
 
 .item-list {
@@ -16,45 +16,46 @@
 	grid-template-columns: auto auto;
 	column-gap: 2.25rem;
 	row-gap: 2rem;
+	// width: 70%;
 }
 
-.items-filter {
-	display: flex;
-	flex-direction: column;
-}
+// .items-filter {
+// 	display: flex;
+// 	flex-direction: column;
+// }
 
-.filter-label {
-	font-family: Montserrat;
-	font-size: 0.66rem;
-	font-weight: 400;
-}
+// .filter-label {
+// 	font-family: Montserrat;
+// 	font-size: 0.66rem;
+// 	font-weight: 400;
+// }
 
-.filter-topic {
-	display: flex;
-	flex-direction: column;
+// .filter-topic {
+// 	display: flex;
+// 	flex-direction: column;
 
-	& input {
-		display: none;
-	}
-}
+// 	& input {
+// 		display: none;
+// 	}
+// }
 
-.filter-topic-item {
-	padding: 0.5rem;
-	font-family: Montserrat;
-	font-size: 0.75rem;
-	font-weight: 500;
-	cursor: pointer;
-	border-bottom: 1px $light-gray solid;
+// .filter-topic-item {
+// 	padding: 0.5rem;
+// 	font-family: Montserrat;
+// 	font-size: 0.75rem;
+// 	font-weight: 500;
+// 	cursor: pointer;
+// 	border-bottom: 1px $light-gray solid;
 
-	&:last-child {
-		border-bottom: 0;
-	}
-}
+// 	&:last-child {
+// 		border-bottom: 0;
+// 	}
+// }
 
-#all:checked ~ label[for='all'],
-#forest:checked ~ label[for='forest'],
-#kids:checked ~ label[for='kids'],
-#other:checked ~ label[for='other'] {
-	background-color: $orange;
-	color: #fff;
-}
+// #all:checked ~ label[for='all'],
+// #forest:checked ~ label[for='forest'],
+// #kids:checked ~ label[for='kids'],
+// #other:checked ~ label[for='other'] {
+// 	background-color: $orange;
+// 	color: #fff;
+// }

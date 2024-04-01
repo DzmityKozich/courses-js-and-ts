@@ -8,6 +8,7 @@
   <script type="module" src="../../components/footer/footer.ts"></script>
   <script type="module" src="../../components/navbar/navbar.ts"></script>
   <script type="module" src="../../components/sidebar/sidebar.ts"></script>
+  <script type="module" src="../../components/items-filter/items-filter.ts"></script>
   <script type="module" src="../../share/page-title/page-title.ts"></script>
   <script type="module" src="../../share/rating/rating.ts"></script>
   <script type="module" src="../../components/fox-item-card/fox-item-card.ts"></script>
@@ -23,42 +24,14 @@
 
 <body>
   <div id="all-items">
+    <fox-sidebar></fox-sidebar>
+
     <fox-navbar background="white"></fox-navbar>
     <fox-page-title subtitle="Home/All items" pagetitle="All Items"></fox-page-title>
 
     <div class="container">
       <div class="items">
-        <form class="items-filter">
-          <div class="filter-search">
-            <input type="text" name="search" class="form-input" placeholder="Search">
-          </div>
-
-          <div class="filter-topic">
-            <label class="filter-label">Topic</label>
-            <input type="radio" name="topic" id="all" value="all">
-            <input type="radio" name="topic" id="forest" value="forest">
-            <input type="radio" name="topic" id="kids" value="kids">
-            <input type="radio" name="topic" id="other" value="other">
-            <label for="all" class="filter-topic-item">
-              All
-            </label>
-            <label for="forest" class="filter-topic-item">
-              Forest
-            </label>
-            <label for="kids" class="filter-topic-item">
-              Foxes kids
-            </label>
-            <label for="other" class="filter-topic-item">
-              Other
-            </label>
-          </div>
-
-          <div class="filter-price">
-            <label class="filter-label">Price</label>
-            <fox-range></fox-range>
-            <div class="price-value">Value: $80</div>
-          </div>
-        </form>
+        <fox-items-filter></fox-items-filter>
 
         <div class="item-list"></div>
       </div>

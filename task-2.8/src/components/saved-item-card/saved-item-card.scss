@@ -1,0 +1,66 @@
+@import '../../../scss/definitions.scss';
+
+.saved-item-card {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.saved-item-card-body {
+	width: 60%;
+}
+
+.saved-item-card-img {
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.saved-item-card-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 0.5rem;
+}
+
+.saved-item-card-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.counter {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.counter-btn {
+	width: 1rem;
+	height: 1rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: $gray;
+	font-size: 1.25rem;
+	background-color: transparent;
+	border-radius: 50%;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: $light-gray;
+	}
+}
+
+.counter-amount {
+	background-color: $orange;
+	font-family: Roboto;
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #fff;
+	padding: 0.25rem 0.75rem;
+	border-radius: 100px;
+}
