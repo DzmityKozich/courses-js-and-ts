@@ -63,6 +63,10 @@ button {
 	justify-content: start !important;
 }
 
+.non-scroll {
+	overflow: hidden;
+}
+
 // Margin
 .mb-2 {
 	margin-bottom: 0.5rem;
@@ -117,6 +121,8 @@ button {
 	font-weight: 500;
 	color: #fff;
 	background-color: #000;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .btn-lg {

@@ -14,7 +14,7 @@ import './sidebar.scss';
 @customElement('fox-sidebar')
 export class Sidebar extends LitComponent {
 	@state()
-	private isOpen: boolean = true;
+	private isOpen: boolean = false;
 
 	@state()
 	private items: SavedItem[] = [];
@@ -23,12 +23,14 @@ export class Sidebar extends LitComponent {
 
 	private closeSidebar = () => {
 		this.isOpen = false;
+		document.body.classList.remove('non-scroll');
 	};
 
 	connectedCallback(): void {
 		super.connectedCallback();
 		sidebarToggle.onToggle((state) => {
 			this.isOpen = state === 'open';
+			document.body.classList.toggle('non-scroll', this.isOpen);
 			this.isOpen && this.loadSavedItems();
 		});
 	}

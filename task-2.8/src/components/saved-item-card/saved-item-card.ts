@@ -43,8 +43,8 @@ export class SavedItemCard extends LitComponent {
 					</div>
 
 					<div class="saved-item-card-info">
-						<div class="item-name">${this.item.item.name}</div>
-						<div class="item-price">$${this.item.item.price.toFixed(2)}</div>
+						<div class="saved-item-item-name">${this.item.item.name}</div>
+						<div class="saved-item-item-price">$${this.item.item.price.toFixed(2)}</div>
 					</div>
 				</div>
 
