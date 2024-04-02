@@ -21,7 +21,7 @@ export class Sidebar extends LitComponent {
 
 	private storeServie = getStoreService();
 
-	private onBackdropClick = () => {
+	private closeSidebar = () => {
 		this.isOpen = false;
 	};
 
@@ -35,7 +35,6 @@ export class Sidebar extends LitComponent {
 
 	private loadSavedItems(): void {
 		this.items = this.storeServie.getAll();
-		console.log(this.items);
 	}
 
 	private updateItem = (item: SavedItem) => {
@@ -43,22 +42,37 @@ export class Sidebar extends LitComponent {
 		this.items = this.storeServie.getAll();
 	};
 
+	private removeItem = (item: SavedItem) => {
+		this.storeServie.remove(item);
+		this.items = this.storeServie.getAll();
+	};
+
 	protected render(): TemplateResult {
 		const classes = { open: this.isOpen };
 		return html` <div class="sidebar ${classMap(classes)}">
-			<div class="backdrop" @click=${this.onBackdropClick}></div>
+			<div class="backdrop" @click=${this.closeSidebar}></div>
 			<div class="sidebar-content">
-				${repeat(
-					this.items,
-					(item) => item.item.id,
-					(item) => {
-						const itemAttr = transformJson(item);
-						return html`<fox-saved-item-card
-							item=${itemAttr}
-							@itemChange=${({ detail }: CustomEvent) => this.updateItem(detail)}
-						></fox-saved-item-card>`;
-					}
-				)}
+				<div class="sidebar-close">
+					<button class="sidebar-close-btn" @click=${this.closeSidebar}>&times;</button>
+				</div>
+				<div class="sidebar-header">
+					<div class="sidebar-subtitle">box</div>
+					<div class="sidebar-title">Your Bag</div>
+				</div>
+				<div class="saved-items">
+					${repeat(
+						this.items,
+						(item) => item.item.id,
+						(item) => {
+							const itemAttr = transformJson(item);
+							return html`<fox-saved-item-card
+								item=${itemAttr}
+								@itemChange=${({ detail }: CustomEvent) => this.updateItem(detail)}
+								@remove=${({ detail }: CustomEvent) => this.removeItem(detail)}
+							></fox-saved-item-card>`;
+						}
+					)}
+				</div>
 			</div>
 		</div>`;
 	}

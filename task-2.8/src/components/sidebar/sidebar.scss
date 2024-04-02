@@ -1,3 +1,5 @@
+@import '../../../scss/definitions.scss';
+
 .sidebar {
 	position: fixed;
 	top: 0;
@@ -27,4 +29,45 @@
 	height: 100%;
 	background-color: #fff;
 	padding: 1.75rem;
+}
+
+.sidebar-close {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1.75rem;
+}
+
+.sidebar-close-btn {
+	font-size: 1rem;
+	color: $gray;
+	background-color: transparent;
+}
+
+.sidebar-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2.75rem;
+}
+
+.sidebar-subtitle {
+	font-family: Montserrat;
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: $gray;
+	margin-bottom: 0.25rem;
+}
+
+.sidebar-title {
+	font-family: Playfair Display;
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 2.5rem;
+}
+
+.saved-items {
+	display: flex;
+	flex-direction: column;
+	gap: 1.75rem;
 }

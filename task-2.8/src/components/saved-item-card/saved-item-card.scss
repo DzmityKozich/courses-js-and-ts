@@ -64,3 +64,22 @@
 	padding: 0.25rem 0.75rem;
 	border-radius: 100px;
 }
+
+.remove-btn {
+	color: $gray;
+	font-family: Roboto;
+	font-size: 0.5rem;
+	font-weight: 400;
+	padding: 0.25rem 0.75rem;
+	padding-right: 1.25rem;
+	background-image: url(../../../icons/saved-item-card/remove.svg);
+	background-repeat: no-repeat;
+	background-position: right;
+	border-radius: 100px;
+	background-color: transparent;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: $light-gray;
+	}
+}
