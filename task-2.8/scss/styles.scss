@@ -109,6 +109,10 @@ button {
 // Containers
 .container {
 	padding: 2rem 10rem;
+
+	@include max1200 {
+		padding: 2rem 6rem;
+	}
 }
 
 .items-container {

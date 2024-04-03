@@ -5,3 +5,21 @@ $red: #eb5757;
 $light-red: #ffcbba;
 $orange: #cc5520;
 $green: #00ae1c;
+
+@mixin max1200 {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin max1000 {
+	@media (max-width: 1000px) {
+		@content;
+	}
+}
+
+@mixin max900 {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
