@@ -3,7 +3,7 @@ import { LitComponent } from '../../LitComponent';
 import { customElement, state } from 'lit/decorators.js';
 import { sidebarToggle } from './sidebar-toggle';
 import { classMap } from 'lit/directives/class-map.js';
-import { StoreService, getStoreService } from '../../services/store-service';
+import { getStoreService } from '../../services/store-service';
 import { SavedItem } from '../../models/SavedItem';
 import { repeat } from 'lit/directives/repeat.js';
 import { transformJson } from '../../common/convertors';
@@ -18,6 +18,9 @@ export class Sidebar extends LitComponent {
 
 	@state()
 	private items: SavedItem[] = [];
+
+	@state()
+	private totalSum: number = 0;
 
 	private storeServie = getStoreService();
 
@@ -36,18 +39,27 @@ export class Sidebar extends LitComponent {
 	}
 
 	private loadSavedItems(): void {
-		this.items = this.storeServie.getAll();
+		this.updateView();
 	}
 
 	private updateItem = (item: SavedItem) => {
-		this.storeServie.update(item);
-		this.items = this.storeServie.getAll();
+		if (item.amount <= 0) {
+			this.storeServie.remove(item);
+		} else {
+			this.storeServie.update(item);
+		}
+		this.updateView();
 	};
 
 	private removeItem = (item: SavedItem) => {
 		this.storeServie.remove(item);
-		this.items = this.storeServie.getAll();
+		this.updateView();
 	};
+
+	private updateView(): void {
+		this.items = this.storeServie.getAll();
+		this.totalSum = this.items.reduce((sum, item) => (sum += item.item.price * item.amount), 0);
+	}
 
 	protected render(): TemplateResult {
 		const classes = { open: this.isOpen };
@@ -57,10 +69,12 @@ export class Sidebar extends LitComponent {
 				<div class="sidebar-close">
 					<button class="sidebar-close-btn" @click=${this.closeSidebar}>&times;</button>
 				</div>
+
 				<div class="sidebar-header">
 					<div class="sidebar-subtitle">box</div>
 					<div class="sidebar-title">Your Bag</div>
 				</div>
+
 				<div class="saved-items">
 					${repeat(
 						this.items,
@@ -74,6 +88,15 @@ export class Sidebar extends LitComponent {
 							></fox-saved-item-card>`;
 						}
 					)}
+				</div>
+
+				<div class="sidebar-footer">
+					<div class="total-sum">
+						Total:
+						<div>$${this.totalSum}</div>
+					</div>
+
+					<button class="btn w-100 bg-orange">Checkout</button>
 				</div>
 			</div>
 		</div>`;
