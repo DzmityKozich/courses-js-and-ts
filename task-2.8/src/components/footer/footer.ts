@@ -29,40 +29,42 @@ export class Footer extends LitComponent {
 							</div>
 						</div>
 
-						<div class="info-collection">
-							<div class="collection-title">Shop</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-						</div>
+						<div class="footer-info">
+							<div class="info-collection">
+								<div class="collection-title">Shop</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+							</div>
 
-						<div class="info-collection">
-							<div class="collection-title">Products</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-						</div>
+							<div class="info-collection">
+								<div class="collection-title">Products</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+							</div>
 
-						<div class="info-collection">
-							<div class="collection-title">Collection</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-						</div>
+							<div class="info-collection">
+								<div class="collection-title">Collection</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+							</div>
 
-						<div class="info-collection">
-							<div class="collection-title">Weekly updates</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-						</div>
+							<div class="info-collection">
+								<div class="collection-title">Weekly updates</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+							</div>
 
-						<div class="info-collection">
-							<div class="collection-title">About us</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
-							<div class="collection-item">Lorem ipsum</div>
+							<div class="info-collection">
+								<div class="collection-title">About us</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+								<div class="collection-item">Lorem ipsum</div>
+							</div>
 						</div>
 					</div>
 

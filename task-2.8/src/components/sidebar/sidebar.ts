@@ -67,7 +67,7 @@ export class Sidebar extends LitComponent {
 			<div class="backdrop" @click=${this.closeSidebar}></div>
 			<div class="sidebar-content">
 				<div class="sidebar-close">
-					<button class="sidebar-close-btn" @click=${this.closeSidebar}>&times;</button>
+					<button class="x-close-btn" @click=${this.closeSidebar}>&times;</button>
 				</div>
 
 				<div class="sidebar-header">

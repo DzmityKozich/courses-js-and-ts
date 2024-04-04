@@ -51,6 +51,8 @@ export class Navbar extends LitComponent {
 		const colorClass = { 'text-black': this.background === 'white' };
 		return html`
 			<nav class="nav ${this.getBgClass()}">
+				<button class="nav-toggle-btn"></button>
+
 				<div class="logo">${this.logoImg()}</div>
 
 				<div class="navigation ${classMap(colorClass)}">
@@ -58,6 +60,7 @@ export class Navbar extends LitComponent {
 					<a href="../../pages/home-page/home-page.html">Mainpage</a>
 					<a href="../../pages/our-history/our-history.html">Our history</a>
 					<a href="../../pages/all-items/all-items.html">All items</a>
+					<button class="x-close-btn text-white">&times;</button>
 				</div>
 
 				<div class="basket">

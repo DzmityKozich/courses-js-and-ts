@@ -106,6 +106,10 @@ button {
 	color: #000 !important;
 }
 
+.text-white {
+	color: #fff !important;
+}
+
 // Containers
 .container {
 	padding: 2rem 10rem;
@@ -139,6 +143,12 @@ button {
 
 .btn-img {
 	padding: 0;
+	background-color: transparent;
+}
+
+.x-close-btn {
+	font-size: 1rem;
+	color: $gray;
 	background-color: transparent;
 }
 

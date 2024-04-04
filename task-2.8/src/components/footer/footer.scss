@@ -12,25 +12,44 @@
 		@include max1200 {
 			padding: 2rem 3rem;
 		}
-	}
-}
 
-.contacts {
-	max-width: 250px;
+		@include max800 {
+			padding-top: 0;
+		}
+	}
 }
 
 .footer-content {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: start;
 	margin-bottom: 1rem;
+
+	@include max800 {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.contacts {
+	max-width: 250px;
+
+	@include max800 {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .social-links {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+
+	@include max800 {
+		justify-content: center;
+	}
 }
 
 .social-link {
@@ -55,9 +74,25 @@
 	}
 }
 
+.footer-info {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+
+	@include max800 {
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+		row-gap: 1rem;
+	}
+}
+
 .info-collection {
 	display: flex;
 	flex-direction: column;
+
+	@include max800 {
+		width: 50%;
+	}
 }
 
 .collection-title {
