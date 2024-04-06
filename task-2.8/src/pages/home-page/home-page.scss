@@ -28,6 +28,14 @@ body {
 	font-weight: 700;
 	width: 500px;
 	line-height: 90px;
+
+	@include max700 {
+		width: 100%;
+		top: unset;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 .sub-title {

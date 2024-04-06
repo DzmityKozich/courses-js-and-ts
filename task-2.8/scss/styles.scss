@@ -117,6 +117,10 @@ button {
 	@include max1200 {
 		padding: 2rem 6rem;
 	}
+
+	@include max600 {
+		padding: 2rem 2.5rem;
+	}
 }
 
 .items-container {
@@ -139,6 +143,12 @@ button {
 
 .btn-lg {
 	padding: 0.75rem 8rem;
+
+	@include max800 {
+		padding: 0.75rem 0;
+		width: 100%;
+		text-align: center;
+	}
 }
 
 .btn-img {

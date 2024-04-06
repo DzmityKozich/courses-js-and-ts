@@ -35,3 +35,9 @@ $green: #00ae1c;
 		@content;
 	}
 }
+
+@mixin max600 {
+	@media (max-width: 600px) {
+		@content;
+	}
+}

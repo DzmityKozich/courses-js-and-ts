@@ -50,22 +50,23 @@ export class Navbar extends LitComponent {
 	protected render(): TemplateResult {
 		const colorClass = { 'text-black': this.background === 'white' };
 		return html`
+			<input id="navbar-toggle" type="checkbox" />
 			<nav class="nav ${this.getBgClass()}">
-				<button class="nav-toggle-btn"></button>
+				<label for="navbar-toggle" class="nav-toggle-btn"></label>
 
-				<div class="logo">${this.logoImg()}</div>
+				<div class="logo"></div>
 
-				<div class="navigation ${classMap(colorClass)}">
+				<div class="navigation">
 					<span class="navigation-marker">shop</span>
 					<a href="../../pages/home-page/home-page.html">Mainpage</a>
 					<a href="../../pages/our-history/our-history.html">Our history</a>
 					<a href="../../pages/all-items/all-items.html">All items</a>
-					<button class="x-close-btn text-white">&times;</button>
+					<label for="navbar-toggle" class="x-close-btn text-white">&times;</label>
 				</div>
 
 				<div class="basket">
-					<button class="btn btn-img" @click=${this.openSidebar}>${this.basketImg()}</button>
-					<button class="btn btn-img">${this.foxImg()}</button>
+					<button class="btn btn-img basket" @click=${this.openSidebar}></button>
+					<button class="btn btn-img fox"></button>
 				</div>
 			</nav>
 		`;

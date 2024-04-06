@@ -16,6 +16,10 @@
 		@include max800 {
 			padding-top: 0;
 		}
+
+		@include max600 {
+			padding: 0.75rem;
+		}
 	}
 }
 
