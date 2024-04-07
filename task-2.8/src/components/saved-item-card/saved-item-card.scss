@@ -20,15 +20,18 @@
 	flex-direction: row;
 	justify-content: space-around;
 	padding-top: 0.5rem;
+	font-size: 0.8rem;
+
+	@include max800 {
+		font-size: 0.5rem;
+	}
 }
 
 .saved-item-item-name {
-	font-size: 0.8rem;
 	font-weight: 700;
 }
 
 .saved-item-item-price {
-	font-size: 0.8rem;
 	font-weight: 600;
 }
 
@@ -45,6 +48,10 @@
 	flex-direction: row;
 	gap: 0.5rem;
 	align-items: center;
+
+	@include max800 {
+		gap: 0.25rem;
+	}
 }
 
 .counter-btn {
@@ -62,6 +69,10 @@
 
 	&:hover {
 		background-color: $light-gray;
+	}
+
+	@include max800 {
+		font-size: 1rem;
 	}
 }
 
@@ -91,5 +102,11 @@
 
 	&:hover {
 		background-color: $light-gray;
+	}
+
+	@include max500 {
+		padding-right: 0.75rem;
+		padding-top: 1.25rem;
+		background-position: top;
 	}
 }
