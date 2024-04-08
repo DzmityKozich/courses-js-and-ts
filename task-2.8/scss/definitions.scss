@@ -12,6 +12,12 @@ $green: #00ae1c;
 	}
 }
 
+@mixin max1100 {
+	@media (max-width: 1100px) {
+		@content;
+	}
+}
+
 @mixin max1000 {
 	@media (max-width: 1000px) {
 		@content;

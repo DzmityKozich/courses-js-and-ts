@@ -5,6 +5,10 @@
 	flex-direction: column;
 	width: 100%;
 	gap: 2.25rem;
+
+	@include max800 {
+		gap: 0.75rem;
+	}
 }
 
 .filter-search {
@@ -33,6 +37,18 @@
 	}
 }
 
+.filter-topic-options {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: repeat(4, auto);
+
+	@include max1100 {
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+		gap: 1rem;
+	}
+}
+
 .filter-topic-item {
 	padding: 0.5rem;
 	font-family: Montserrat;
@@ -43,6 +59,12 @@
 
 	&:last-child {
 		border-bottom: 0;
+	}
+
+	@include max1100 {
+		border: 1px $orange solid !important;
+		border-radius: 10px;
+		text-align: center;
 	}
 }
 

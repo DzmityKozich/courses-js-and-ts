@@ -1,20 +1,59 @@
 @import '../../../scss/definitions.scss';
 
+#all-items {
+	& .container {
+		margin: 0 auto;
+		padding: 2rem 0;
+		width: 100%;
+		max-width: 1200px;
+	}
+
+	& .items-container {
+		@include max800 {
+			padding: 0 3rem;
+		}
+	}
+}
+
 .items {
 	display: flex;
 	flex-direction: row;
 	padding: 2rem 0;
+
+	@include max1100 {
+		flex-direction: column;
+		padding: 2rem;
+	}
+
+	@include max800 {
+		padding-top: 0;
+	}
 }
 
 .items-filter {
 	padding-right: 1rem;
+	padding-left: 0.25rem;
 	min-width: 200px;
 	width: 30%;
+
+	@include max1100 {
+		width: 100%;
+		padding: 0;
+		margin-bottom: 2.5rem;
+	}
 }
 
 .item-list {
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 1fr 1fr;
 	column-gap: 2.25rem;
 	row-gap: 2rem;
+
+	@include max1100 {
+		justify-items: center;
+	}
+
+	@include max700 {
+		grid-template-columns: 1fr;
+	}
 }

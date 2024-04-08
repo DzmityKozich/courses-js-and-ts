@@ -5,6 +5,10 @@
 	flex-direction: column;
 	width: 17.5rem;
 	font-family: Montserrat;
+
+	@include max1000 {
+		width: fit-content;
+	}
 }
 
 .item-card-img {
@@ -47,15 +51,30 @@
 	justify-content: space-between;
 	padding-top: 0.5rem;
 	align-items: center;
+	font-size: 0.8rem;
+
+	@include max1000 {
+		font-size: 0.66rem;
+	}
+
+	@include max800 {
+		font-size: 0.5rem;
+	}
+
+	@include max700 {
+		font-size: 0.75rem;
+	}
+
+	@include max500 {
+		font-size: 0.5rem;
+	}
 }
 
 .item-name {
-	font-size: 0.8rem;
 	font-weight: 700;
 }
 
 .item-price {
-	font-size: 0.8rem;
 	font-weight: 600;
 }
 
@@ -64,4 +83,16 @@
 	font-weight: 400;
 	color: $gray;
 	text-transform: capitalize;
+
+	@include max800 {
+		font-size: 0.45rem;
+	}
+
+	@include max800 {
+		font-size: 0.5rem;
+	}
+
+	@include max500 {
+		font-size: 0.5rem;
+	}
 }

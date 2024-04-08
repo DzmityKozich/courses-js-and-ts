@@ -1,14 +1,9 @@
 import { customElement, state } from 'lit/decorators.js';
 import { LitComponent } from '../../LitComponent';
 import { TemplateResult, html } from 'lit';
+import { FilterForm } from '../../services/fox-items-service';
 
 import './items-filter.scss';
-
-export interface FilterForm {
-	name: string;
-	topic: string;
-	price: string;
-}
 
 @customElement('fox-items-filter')
 export class ItemsFilter extends LitComponent {
@@ -31,14 +26,16 @@ export class ItemsFilter extends LitComponent {
 
 				<div class="filter-topic">
 					<label class="filter-label">Topic</label>
-					<input type="radio" name="topic" id="all" value="" @change=${this.changeFilter} />
-					<input type="radio" name="topic" id="forest" value="forest" @change=${this.changeFilter} />
-					<input type="radio" name="topic" id="kids" value="foxkid" @change=${this.changeFilter} />
-					<input type="radio" name="topic" id="other" value="other" @change=${this.changeFilter} />
-					<label for="all" class="filter-topic-item"> All </label>
-					<label for="forest" class="filter-topic-item"> Forest </label>
-					<label for="kids" class="filter-topic-item"> Foxes kids </label>
-					<label for="other" class="filter-topic-item"> Other </label>
+					<div class="filter-topic-options">
+						<input type="radio" name="topic" id="all" value="" @change=${this.changeFilter} />
+						<input type="radio" name="topic" id="forest" value="forest" @change=${this.changeFilter} />
+						<input type="radio" name="topic" id="kids" value="foxkid" @change=${this.changeFilter} />
+						<input type="radio" name="topic" id="other" value="other" @change=${this.changeFilter} />
+						<label for="all" class="filter-topic-item"> All </label>
+						<label for="forest" class="filter-topic-item"> Forest </label>
+						<label for="kids" class="filter-topic-item"> Foxes kids </label>
+						<label for="other" class="filter-topic-item"> Other </label>
+					</div>
 				</div>
 
 				<div class="filter-price">

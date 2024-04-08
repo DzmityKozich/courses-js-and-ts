@@ -4,7 +4,6 @@ import { LitComponent } from '../../LitComponent';
 import { sidebarToggle } from '../sidebar/sidebar-toggle';
 
 import './navbar.scss';
-import { classMap } from 'lit/directives/class-map.js';
 
 type BgColor = 'white' | 'transparent' | 'black';
 
@@ -28,27 +27,11 @@ export class Navbar extends LitComponent {
 		}
 	}
 
-	private logoImg(): TemplateResult {
-		const logo = this.background === 'white' ? 'logo-color' : 'logo';
-		return html`<img src="../../../icons/navbar/${logo}.svg" alt="logo" />`;
-	}
-
-	private foxImg(): TemplateResult {
-		const fox = this.background === 'white' ? 'fox-black' : 'fox';
-		return html`<img src="../../../icons/navbar/${fox}.svg" alt="fox" />`;
-	}
-
-	private basketImg(): TemplateResult {
-		const basket = this.background === 'white' ? 'basket-black' : 'basket';
-		return html`<img src="../../../icons/navbar/${basket}.svg" alt="basket" />`;
-	}
-
 	private openSidebar = () => {
 		sidebarToggle.toggle('open');
 	};
 
 	protected render(): TemplateResult {
-		const colorClass = { 'text-black': this.background === 'white' };
 		return html`
 			<input id="navbar-toggle" type="checkbox" />
 			<nav class="nav ${this.getBgClass()}">

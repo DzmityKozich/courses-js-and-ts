@@ -1,7 +1,11 @@
 import foxes from '../../db/foxes.json';
-// TODO: export FilterForm from this file
-import { FilterForm } from '../components/items-filter/items-filter';
 import { Fox } from '../models/Fox';
+
+export interface FilterForm {
+	name: string;
+	topic: string;
+	price: string;
+}
 
 export class FoxItemsService {
 	public getAllItems(): Fox[] {

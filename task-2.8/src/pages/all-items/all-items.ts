@@ -1,6 +1,5 @@
-import { FilterForm } from '../../components/items-filter/items-filter';
 import { Fox } from '../../models/Fox';
-import { FoxItemsService } from '../../services/fox-items-service';
+import { FilterForm, FoxItemsService } from '../../services/fox-items-service';
 import { transformJson } from '../../common/convertors';
 import { getStoreService } from '../../services/store-service';
 
