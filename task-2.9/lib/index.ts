@@ -8,6 +8,8 @@ const port = process.env.SERVER_PORT || 3000;
 
 const app = experss();
 
+app.use(experss.json());
+
 app.use('/', router);
 
 app.listen(port, () => {
