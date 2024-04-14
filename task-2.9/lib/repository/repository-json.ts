@@ -1,11 +1,21 @@
 import { ToDo } from '../models/ToDo';
 import { RepositoryDef } from './repository-def';
 import fs from 'fs';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const filePath = process.env.JSON_PATH!;
 
 export class RepositoryJson implements RepositoryDef {
+	public init(): Promise<void> {
+		// NOTE: jubst mock implementation
+		return Promise.resolve();
+	}
+
 	public getAll(): Promise<ToDo[]> {
 		try {
-			const todoListAsString = fs.readFileSync('./db/db.json').toString();
+			const todoListAsString = fs.readFileSync(filePath).toString();
 			const todoList = (JSON.parse(todoListAsString) as ToDo[]).map(
 				({ id, createdAt, isComplete, text, title }) => new ToDo(id, title, text, createdAt, isComplete)
 			);
@@ -51,6 +61,6 @@ export class RepositoryJson implements RepositoryDef {
 	}
 
 	private writeFile(todoList: ToDo[]): void {
-		fs.writeFileSync('./db/db.json', JSON.stringify(todoList, null, '\t'));
+		fs.writeFileSync(filePath, JSON.stringify(todoList, null, '\t'));
 	}
 }

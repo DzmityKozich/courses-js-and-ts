@@ -1,0 +1,29 @@
+# Use the official Node.js image as the base image
+FROM node:latest
+
+ENV SERVER_PORT=3000
+ENV DB_TYPE="json"
+ENV JSON_PATH="./db/db.json"
+
+RUN mkdir -p /usr/src/app
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package.json package-lock.json tsconfig.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the app
+RUN npm run build
+
+# Expose the port your app runs on
+EXPOSE $SERVER_PORT
+
+# Command to run your app using node
+CMD ["npm", "run", "start"]

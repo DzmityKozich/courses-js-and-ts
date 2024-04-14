@@ -3,12 +3,19 @@
 
 import { RepositoryDef } from './repository-def';
 import { RepositoryJson } from './repository-json';
+import { TodoRepositoryMongo } from './todo-repository-mongo';
 
 let repo: RepositoryDef;
 
-export const repository = (): RepositoryDef => {
+export const repository = async (): Promise<RepositoryDef> => {
 	if (!repo) {
-		repo = process.env.DB_TYPE === 'json' ? new RepositoryJson() : new RepositoryJson();
+		// repo = process.env.DB_TYPE === 'json' ? new RepositoryJson() : new TodoRepositoryMongo();
+		if (process.env.DB_TYPE === 'json') {
+			repo = new RepositoryJson();
+		} else {
+			repo = new TodoRepositoryMongo();
+		}
+		await repo.init();
 	}
 	return repo;
 };
