@@ -2,7 +2,7 @@
 // and return RepositoryDef object
 
 import { RepositoryDef } from './repository-def';
-import { RepositoryJson } from './repository-json';
+import { TodoRepositoryJson } from './todo-repository-json';
 import { TodoRepositoryMongo } from './todo-repository-mongo';
 
 let repo: RepositoryDef;
@@ -11,7 +11,7 @@ export const repository = async (): Promise<RepositoryDef> => {
 	if (!repo) {
 		// repo = process.env.DB_TYPE === 'json' ? new RepositoryJson() : new TodoRepositoryMongo();
 		if (process.env.DB_TYPE === 'json') {
-			repo = new RepositoryJson();
+			repo = new TodoRepositoryJson();
 		} else {
 			repo = new TodoRepositoryMongo();
 		}

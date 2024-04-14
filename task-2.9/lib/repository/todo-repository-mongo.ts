@@ -1,11 +1,17 @@
 import { Collection, MongoClient, MongoServerError, ObjectId } from 'mongodb';
 import { ToDo } from '../models/ToDo';
 import { RepositoryDef } from './repository-def';
+import { injectable } from 'inversify';
+import dotenv from 'dotenv';
+import 'reflect-metadata';
+
+dotenv.config();
 
 const url = process.env.MONGO_PATH || 'mongodb://localhost:27017';
 const dbName = process.env.MONGO_DB_NAME || 'todo';
 const collcetionName = process.env.MONGO_COLLECTION_NAME || 'todo';
 
+@injectable()
 export class TodoRepositoryMongo implements RepositoryDef {
 	private collection!: Collection<ToDo>;
 

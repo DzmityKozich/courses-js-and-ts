@@ -1,12 +1,14 @@
 import express from 'express';
-import { createHandler, deleteHandler, getAllHandler, getByIdHandler, updateHandler } from '../handlers/handlers';
+import { Handler } from '../handlers/handler';
 
 const router = express.Router();
 
-router.get('/todo', getAllHandler);
-router.get('/todo/:id', getByIdHandler);
-router.post('/todo', createHandler);
-router.post('/todo/update', updateHandler);
-router.delete('/todo/:id', deleteHandler);
+const handler = new Handler();
+
+router.get('/todo', handler.getAll);
+router.get('/todo/:id', handler.getById);
+router.post('/todo', handler.create);
+router.post('/todo/update', handler.update);
+router.delete('/todo/:id', handler.delete);
 
 export default router;

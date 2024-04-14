@@ -2,12 +2,17 @@ import { ToDo } from '../models/ToDo';
 import { RepositoryDef } from './repository-def';
 import fs from 'fs';
 import dotenv from 'dotenv';
+import { injectable } from 'inversify';
+import 'reflect-metadata';
+
+// TODO: generate id, if it not setted
 
 dotenv.config();
 
 const filePath = process.env.JSON_PATH!;
 
-export class RepositoryJson implements RepositoryDef {
+@injectable()
+export class TodoRepositoryJson implements RepositoryDef {
 	public init(): Promise<void> {
 		// NOTE: jubst mock implementation
 		return Promise.resolve();
