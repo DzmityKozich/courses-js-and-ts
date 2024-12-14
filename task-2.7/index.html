@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fox Countries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div class="toast-holder">
+      <div class="toast-container"></div>
+    </div>
+
+    <header class="header">
+      <div class="label">Where in the world?</div>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle-btn" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS">
+          <div class="toggle-marker"></div>
+        </button>
+      </div>
+
+      <div class="search">
+        <form class="search-form">
+          <input type="text" placeholder="Search for a country....">
+          <button type="submit" class="btn-search">
+            <img src="./icons/search.svg" alt="">
+          </button>
+        </form>
+      </div>
+
+      <div class="region-select">
+        <div class="menu">
+          <button class="menu-toggle">
+            Region
+            <div class="menu-toggle-arrow">
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"
+                transform="rotate(180)">
+                <path d="M12.5714 6.78577L6.99998 1.21434L1.42855 6.78577" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+          <div class="menu-list hidden">
+            <div class="menu-item" data-region="asia">Asia</div>
+            <div class="menu-item" data-region="europe">Europe</div>
+            <div class="menu-item" data-region="america">America</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="card-list"></main>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

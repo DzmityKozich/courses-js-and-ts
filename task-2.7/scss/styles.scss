@@ -1,0 +1,84 @@
+@import './definitions.scss';
+@import './header.scss';
+@import './card.scss';
+@import './toast.scss';
+
+:root {
+	--color-default: #f8f8f8;
+	--el-bg-primary: #fff;
+	--text-color: #000;
+	--highlight: #efefef;
+	--toast-bg: #242424;
+}
+
+// Themes
+[data-theme='dark'] {
+	--color-default: #242424;
+	--el-bg-primary: #242424;
+	--text-color: #fff;
+	--highlight: #b8b6bf;
+	--toast-bg: #efefef;
+}
+
+// Default
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 24px;
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	height: 100%;
+	line-height: 1;
+	text-rendering: optimizeSpeed;
+	font-family: Roboto;
+	letter-spacing: 0.02em;
+	line-height: 22px;
+	background-color: var(--color-default);
+}
+
+ul {
+	list-style-position: inside;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+button {
+	border: 0;
+	cursor: pointer;
+}
+
+// Common
+.border-0 {
+	border: none !important;
+}
+
+.p-0 {
+	padding: 0 !important;
+}
+
+.hidden {
+	display: none;
+}
+
+.justify-end {
+	justify-content: end !important;
+}
+
+.justify-start {
+	justify-content: start !important;
+}
