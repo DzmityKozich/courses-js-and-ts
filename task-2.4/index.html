@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <title>Fox Account</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="space"></div>
+
+    <div class="title">
+      <h1>Create Account</h1>
+    </div>
+
+    <div class="logo">
+      <img src="./icons/fox-img.svg" alt="logo">
+    </div>
+  </header>
+
+  <div class="container">
+    <form name="account-form" class="accout-form">
+      <div class="form-item mb-9">
+        <label for="first-name" class="form-item-label">First Name*</label>
+        <input id="first-name" type="text" class="form-item-input" name="first-name" placeholder="Enter your first name"
+          required>
+        <div class="validation-error">Incorrect value</div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label for="last-name" class="form-item-label">Last Name*</label>
+        <input id="last-name" type="text" class="form-item-input" name="last-name" placeholder="Enter your last name"
+          required>
+        <div class="validation-error">Incorrect value</div>
+      </div>
+
+      <div class="form-item mb-9 grid-column-2">
+        <label for="email" class="form-item-label">Email*</label>
+        <input id="email" type="email" class="form-item-input" name="email" placeholder="Enter your email" required>
+        <div class="validation-error">Incorrect email</div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label for="password" class="form-item-label">Password*</label>
+        <input id="password" type="password" class="form-item-input" name="password" placeholder="Enter your password"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$" required>
+        <div class="validation-error">Incorrect password</div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label for="confirm-password" class="form-item-label">Confirm Password*</label>
+        <input id="confirm-password" type="password" class="form-item-input" name="confirm-password"
+          placeholder="Enter correct your confirm password"
+          pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/" required>
+        <div class="validation-error">Incorrect password confirm</div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label class="form-item-label">Gender:</label>
+        <div class="form-check-group pl-4">
+          <label for="male" class="form-check-item">
+            Male
+            <input type="radio" name="gender" id="male">
+            <span class="checkmark"></span>
+          </label>
+
+          <label for="female" class="form-check-item">
+            Female
+            <input type="radio" name="gender" id="female">
+            <span class="checkmark"></spa>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label class="form-item-label">Hobbies:</label>
+        <div class="form-check-group pl-4">
+          <label for="music" class="form-check-item">
+            Music
+            <input type="checkbox" name="hobbies" id="music">
+            <span class="checkmark"></span>
+          </label>
+
+          <label for="sport" class="form-check-item">
+            Sport
+            <input type="checkbox" name="hobbies" id="sport">
+            <span class="checkmark"></spa>
+          </label>
+
+          <label for="travel" class="form-check-item">
+            Travel
+            <input type="checkbox" name="hobbies" id="travel">
+            <span class="checkmark"></spa>
+          </label>
+
+          <label for="movies" class="form-check-item">
+            Movies
+            <input type="checkbox" name="hobbies" id="movies">
+            <span class="checkmark"></spa>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label for="source-of-income" class="form-item-label">Source of Income</label>
+        <select id="source-of-income" class="form-item-select">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+
+      <div class="form-item mb-9">
+        <label for="income" class="form-item-label">Income</label>
+        <div class="range-container">
+          <input type="range" name="income" id="income" class="form-item-range">
+          <div class="income-display">20k</div>
+        </div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label for="file-upload" class="form-item-label">Upload Profile Picture</label>
+        <input id="file-upload" type="file" name="file-upload" class="form-item-file">
+        <div class="validation-error">Incorrect file type</div>
+      </div>
+
+      <div class="form-item mb-9">
+        <label for="age" class="form-item-label">Age</label>
+        <input id="age" type="number" class="form-item-input" name="Age" min="1" placeholder="Enter your email"
+          required>
+        <div class="validation-error">Incorrect value</div>
+      </div>
+
+      <div class="form-item mb-9 grid-column-2">
+        <label for="bio" class="form-item-label">Bio</label>
+        <textarea name="bio" id="bio" cols="30" rows="7" class="form-item-textarea"
+          placeholder="Tell about yourself"></textarea>
+        <div class="validation-error"></div>
+      </div>
+
+      <div class="form-actions grid-column-2">
+        <button type="submit" class="btn-submit">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="./src/index.ts"></script>
+</body>
+
+</html>
