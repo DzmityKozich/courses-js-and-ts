@@ -1,0 +1,66 @@
+[
+	{
+		"id": "d62eca48-ebed-416f-92ec-571b2009295c",
+		"img": "fox1",
+		"name": "Stylish chair",
+		"price": 120,
+		"rating": 4,
+		"section": "Forest"
+	},
+	{
+		"id": "09610f86-8ae0-4067-ad19-d5c7a1bd6eb0",
+		"img": "fox2",
+		"name": "Stylish chair",
+		"price": 196.3,
+		"rating": 4,
+		"section": "Office"
+	},
+	{
+		"id": "c827275c-9f08-482d-867a-1487bc74d87d",
+		"img": "fox3",
+		"name": "Stylish chair",
+		"price": 120,
+		"rating": 4,
+		"section": "foxkid"
+	},
+	{
+		"id": "bd5f83c5-2442-4b65-9ff8-2354efac3c2c",
+		"img": "fox4",
+		"name": "Stylish chair",
+		"price": 120,
+		"rating": 5,
+		"section": "foxkid"
+	},
+	{
+		"id": "386233fa-2b33-4cce-b1e8-a6c76c0bac9f",
+		"img": "fox5",
+		"name": "Stylish chair",
+		"price": 120,
+		"rating": 5,
+		"section": "forest"
+	},
+	{
+		"id": "41202c8c-3dea-4e04-9168-ffe0427e36be",
+		"img": "fox6",
+		"name": "Stylish chair",
+		"price": 120,
+		"rating": 5,
+		"section": "other"
+	},
+	{
+		"id": "3b699402-d587-4cf1-84a9-5fa7731c9258",
+		"img": "fox7",
+		"name": "Stylish chair",
+		"price": 120,
+		"rating": 3,
+		"section": "forest"
+	},
+	{
+		"id": "64fd1408-ecfc-4b61-84b5-795ba3a9047b",
+		"img": "fox8",
+		"name": "Stylish chair",
+		"price": 120,
+		"rating": 3,
+		"section": "foxkid"
+	}
+]

@@ -1,0 +1,112 @@
+@import '../../../scss/definitions.scss';
+
+.saved-item-card {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.saved-item-card-body {
+	width: 60%;
+}
+
+.saved-item-card-img {
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.saved-item-card-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 0.5rem;
+	font-size: 0.8rem;
+
+	@include max800 {
+		font-size: 0.5rem;
+	}
+}
+
+.saved-item-item-name {
+	font-weight: 700;
+}
+
+.saved-item-item-price {
+	font-weight: 600;
+}
+
+.saved-item-card-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.counter {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: center;
+
+	@include max800 {
+		gap: 0.25rem;
+	}
+}
+
+.counter-btn {
+	width: 1rem;
+	height: 1rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: $gray;
+	font-size: 1.25rem;
+	background-color: transparent;
+	border-radius: 50%;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: $light-gray;
+	}
+
+	@include max800 {
+		font-size: 1rem;
+	}
+}
+
+.counter-amount {
+	background-color: $orange;
+	font-family: Roboto;
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #fff;
+	padding: 0.25rem 0.75rem;
+	border-radius: 100px;
+}
+
+.remove-btn {
+	color: $gray;
+	font-family: Roboto;
+	font-size: 0.5rem;
+	font-weight: 400;
+	padding: 0.25rem 0.75rem;
+	padding-right: 1.25rem;
+	background-image: url(../../../icons/saved-item-card/remove.svg);
+	background-repeat: no-repeat;
+	background-position: right;
+	border-radius: 100px;
+	background-color: transparent;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: $light-gray;
+	}
+
+	@include max500 {
+		padding-right: 0.75rem;
+		padding-top: 1.25rem;
+		background-position: top;
+	}
+}

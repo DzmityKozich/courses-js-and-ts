@@ -1,0 +1,178 @@
+@import '../../../scss/definitions.scss';
+
+body {
+	font-family: Montserrat;
+}
+
+// Navbar
+.nav-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+}
+
+// Header
+.header {
+	position: relative;
+
+	@include max500 {
+		height: 375px;
+		overflow: hidden;
+
+		& img {
+			max-width: 600px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+	}
+}
+
+.title {
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	color: #fff;
+	font-family: Playfair Display;
+	font-size: 3.3rem;
+	font-weight: 700;
+	width: 500px;
+	line-height: 90px;
+
+	@include max700 {
+		width: 100%;
+		top: unset;
+		bottom: 0;
+		left: 50%;
+		padding: 0 0.25rem;
+		transform: translateX(-50%);
+	}
+}
+
+.sub-title {
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+// Animal Cards
+.animal-cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto;
+	gap: 1rem;
+	margin-bottom: 3rem;
+
+	@include max900 {
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(3, auto);
+	}
+
+	@include max600 {
+		margin-bottom: 1rem;
+	}
+}
+
+.animal-card {
+	background-color: $light-gray;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto;
+	padding: 1rem;
+
+	&.big {
+		grid-row: 1 / span 2;
+		grid-column: 2;
+
+		& .animal-card-body {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		& .animal-card-img {
+			justify-self: end;
+			align-self: center;
+			grid-column: 1 / span 2;
+			grid-row: 1 / span 2;
+		}
+
+		@include max900 {
+			grid-row: 3;
+			grid-column: 1;
+		}
+	}
+}
+
+.animal-card-tag {
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 27px;
+	text-transform: capitalize;
+	color: $gray;
+}
+
+.animal-card-img {
+	grid-row: 1 / span 2;
+	grid-column: 2;
+	justify-self: center;
+
+	&.right {
+		grid-column: 1;
+	}
+}
+
+.animal-card-title {
+	font-family: Playfair Display;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 34px;
+}
+
+// News subscription
+.news-subscribe {
+	padding: 3rem 7rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include max1000 {
+		padding: 1.5rem 0rem;
+	}
+
+	@include max500 {
+		padding: 0;
+	}
+}
+
+.news-subscribe-title {
+	font-family: Montserrat;
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 48px;
+	margin-bottom: 0.25rem;
+}
+
+.news-subscribe-sub-title {
+	font-family: Montserrat;
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 27px;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.news-subscribe-form {
+	width: 100%;
+	display: flex;
+
+	@include max600 {
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+}

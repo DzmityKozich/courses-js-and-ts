@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox Store</title>
+  <script type="module" src="../../components/footer/footer.ts"></script>
+  <script type="module" src="../../components/navbar/navbar.ts"></script>
+  <script type="module" src="../../components/sidebar/sidebar.ts"></script>
+  <script type="module" src="../../components/items-filter/items-filter.ts"></script>
+  <script type="module" src="../../share/page-title/page-title.ts"></script>
+  <script type="module" src="../../share/rating/rating.ts"></script>
+  <script type="module" src="../../components/fox-item-card/fox-item-card.ts"></script>
+  <script type="module" src="../../share/range/range.ts"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="all-items">
+    <fox-sidebar></fox-sidebar>
+
+    <fox-navbar background="white"></fox-navbar>
+    <fox-page-title subtitle="Home/All items" pagetitle="All Items"></fox-page-title>
+
+    <div class="container">
+      <div class="items">
+        <fox-items-filter></fox-items-filter>
+
+        <div class="item-list"></div>
+      </div>
+
+      <div class="items-container">
+        <a href="../all-items/all-items.html" class="btn btn-lg bg-orange">All foxes</a>
+      </div>
+    </div>
+
+    <fox-footer></fox-footer>
+  </div>
+  <script type="module" src="./all-items.ts"></script>
+</body>
+
+</html>

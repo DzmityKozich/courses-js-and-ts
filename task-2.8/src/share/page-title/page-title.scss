@@ -1,0 +1,31 @@
+@import '../../../scss/definitions.scss';
+
+.page-title {
+	background-color: $light-gray;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2.25rem;
+
+	@include max600 {
+		padding: 0.5rem;
+	}
+}
+
+.page-title-sub {
+	font-family: Montserrat;
+	font-size: 0.625rem;
+	font-weight: 600;
+	color: $gray;
+	margin-bottom: 0.5rem;
+}
+
+.page-title-main {
+	font-family: Playfair Display;
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 60px;
+	color: #000;
+}

@@ -1,0 +1,55 @@
+$default-color: #d64200;
+$gray: #969595;
+$light-gray: #f4f4f4;
+$red: #eb5757;
+$light-red: #ffcbba;
+$orange: #cc5520;
+$green: #00ae1c;
+
+@mixin max1200 {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin max1100 {
+	@media (max-width: 1100px) {
+		@content;
+	}
+}
+
+@mixin max1000 {
+	@media (max-width: 1000px) {
+		@content;
+	}
+}
+
+@mixin max900 {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin max800 {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+
+@mixin max700 {
+	@media (max-width: 700px) {
+		@content;
+	}
+}
+
+@mixin max600 {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+@mixin max500 {
+	@media (max-width: 500px) {
+		@content;
+	}
+}

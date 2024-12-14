@@ -1,0 +1,98 @@
+@import '../../../scss/definitions.scss';
+
+.item-card {
+	display: flex;
+	flex-direction: column;
+	width: 17.5rem;
+	font-family: Montserrat;
+
+	@include max1000 {
+		width: fit-content;
+	}
+}
+
+.item-card-img {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.item-card-btn {
+	position: absolute;
+	z-index: 9;
+	top: 15px;
+	right: 15px;
+	color: #fff;
+	background-color: $orange;
+	width: 55px;
+	height: 55px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.5rem;
+	font-weight: 400;
+	transition: background-color 0.15s ease;
+
+	&:active {
+		background-color: lighten($color: $orange, $amount: 5);
+	}
+}
+
+.plus-symbol {
+	font-size: 33px;
+	font-weight: 600;
+	line-height: 33px;
+}
+
+.item-card-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 0.5rem;
+	align-items: center;
+	font-size: 0.8rem;
+
+	@include max1000 {
+		font-size: 0.66rem;
+	}
+
+	@include max800 {
+		font-size: 0.5rem;
+	}
+
+	@include max700 {
+		font-size: 0.75rem;
+	}
+
+	@include max500 {
+		font-size: 0.5rem;
+	}
+}
+
+.item-name {
+	font-weight: 700;
+}
+
+.item-price {
+	font-weight: 600;
+}
+
+.item-section {
+	font-size: 0.66rem;
+	font-weight: 400;
+	color: $gray;
+	text-transform: capitalize;
+
+	@include max800 {
+		font-size: 0.45rem;
+	}
+
+	@include max800 {
+		font-size: 0.5rem;
+	}
+
+	@include max500 {
+		font-size: 0.5rem;
+	}
+}
