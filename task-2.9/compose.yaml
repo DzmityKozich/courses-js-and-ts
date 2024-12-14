@@ -1,0 +1,28 @@
+services:
+  server:
+    container_name: todo-app
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+      SERVER_PORT: 3000
+      DB_TYPE: 'mongo' # database type, possible values: 'json' | 'mongo'
+      JSON_PATH: './db/db.json' # define relative path for json database file
+      MONGO_PATH: 'mongodb://mongo:27017' # define url to mongo db
+      MONGO_DB_NAME: 'todo' # define mongo db name
+      MONGO_COLLECTION_NAME: 'todo' # define mongo collection name
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
