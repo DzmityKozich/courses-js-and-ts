@@ -1,0 +1,10 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/task-2.1/css"
+    }
+  ],
+  "liveSassCompile.settings.forceBaseDirectory": "/task-2.1"
+}
